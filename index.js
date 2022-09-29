@@ -12,6 +12,9 @@ function init() {
 		let nodeId = detectClickedNode(board, position.x, position.y);
 		console.log("Node: " + nodeId);
 		leftClick(nodeId, ctx);
+		if (isResetButton(position.x, position.y)) {
+			resetBoard(ctx);
+		}
 	});
 	
 	canvas.addEventListener('contextmenu', function(e) {
@@ -63,6 +66,20 @@ function leftClick(nodeId, ctx) {
 			
 		drawAll(ctx);
 	}
+}
+
+function isResetButton(x, y) {
+	return x >= 12 && x <= 199 && y >= 962 && y <= 992;
+}
+
+function resetBoard(ctx) {
+	Object.keys(board).forEach(id => {
+		if (id > 1) {
+			board[id].active = false;
+		}
+	});
+	
+	drawAll(ctx);
 }
 
 function rightClick(nodeId, ctx) {
