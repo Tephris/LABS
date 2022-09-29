@@ -195,7 +195,9 @@ function activateShortestPath(currentNode) {
 	
 	let path = getPath(currentBest.steps, currentBest.stopNode);
 	for (const nodeId of path) {
-		board[nodeId].active = true;
+		if (validateAwakeningSkillActivation(nodeId)) {
+			board[nodeId].active = true;
+		}
 	}
 }
 
