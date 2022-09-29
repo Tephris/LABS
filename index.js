@@ -92,44 +92,40 @@ function hasActiveConnectedNode(node) {
 
 function deactivateNodeIfAllowed(node) {	
 	node.active = false;
-	var dfsCount = dfs(board[1], [], node);
-	var activeCount = 0;
+	let visited = [];
+	var dfsCount = dfs(board[1], visited);
 	Object.keys(board).forEach(id => {
-		if (board[id].active) {
-			activeCount++;
+		if (!visited.includes(parseInt(id))) {
+			board[id].active = false;
 		}
 	});
-
-	if (dfsCount != activeCount) {
-		node.active = true;	
-	}
 }
 
 function dfs(node, visited) {
 	if (visited.includes(node.id)) {
-		return 0;
+		return;
 	}
 	
 	visited.push(node.id);
 	let connectedNodes = board[node.id].connectedNodes.filter(x => !visited.includes(x) && board[x].active);
 	if (connectedNodes.length == 0) {
-		return 1;
+		return;
 	}
 	
 	if (connectedNodes.length == 1) {
-		return dfs(board[connectedNodes[0]], visited) + 1;
+		return dfs(board[connectedNodes[0]], visited);
 	} else if (connectedNodes.length == 2) {
 		return dfs(board[connectedNodes[0]], visited)
-			+ dfs(board[connectedNodes[1]], visited) + 1;
+			+ dfs(board[connectedNodes[1]], visited);
 	} else if (connectedNodes.length == 3) {
 		return dfs(board[connectedNodes[0]], visited)
 			+ dfs(board[connectedNodes[1]], visited)
-			+ dfs(board[connectedNodes[2]], visited) + 1;
+			+ dfs(board[connectedNodes[2]], visited);
 	} else {
 		return dfs(board[connectedNodes[0]], visited)
 			+ dfs(board[connectedNodes[1]], visited)
 			+ dfs(board[connectedNodes[2]], visited)
-			+ dfs(board[connectedNodes[3]], visited) + 1;
+			+ dfs(board[connectedNodes[3]], visited);
 	}
 }
 
