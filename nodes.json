@@ -43,8 +43,8 @@ var initialBoard = [
   },
   {
     "id": 5,
-    "x": 687,
-    "y": 848,
+    "x": 688,
+    "y": 849,
     "active": false,
     "connectedNodes": [
       4,
@@ -55,7 +55,7 @@ var initialBoard = [
   {
     "id": 6,
     "x": 737,
-    "y": 780,
+    "y": 781,
     "active": false,
     "connectedNodes": [
       3,
@@ -100,7 +100,7 @@ var initialBoard = [
   {
     "id": 10,
     "x": 592,
-    "y": 936,
+    "y": 937,
     "active": false,
     "connectedNodes": [
 	  9,
@@ -110,7 +110,7 @@ var initialBoard = [
   {
     "id": 11,
     "x": 389,
-    "y": 936,
+    "y": 937,
     "active": false,
     "connectedNodes": [
 	  10,
@@ -121,7 +121,7 @@ var initialBoard = [
   {
     "id": 12,
     "x": 389,
-    "y": 838,
+    "y": 839,
     "active": false,
     "connectedNodes": [
 	  11,
@@ -217,7 +217,7 @@ var initialBoard = [
   {
     "id": 21,
     "x": 523,
-    "y": 881,
+    "y": 882,
     "active": false,
     "connectedNodes": [
 	  20,
@@ -341,7 +341,7 @@ var initialBoard = [
   {
     "id": 32,
     "x": 127,
-    "y": 591,
+    "y": 590,
     "active": false,
     "connectedNodes": [
 	  31,
@@ -1136,7 +1136,7 @@ var initialBoard = [
   {
     "id": 107,
     "x": 903,
-    "y": 631,
+    "y": 632,
     "active": false,
     "connectedNodes": [
 	  78,
@@ -1351,8 +1351,8 @@ var initialBoard = [
   },
   {
     "id": 128,
-    "x": 949,
-    "y": 773,
+    "x": 948,
+    "y": 772,
     "active": false,
     "connectedNodes": [
 	  127,
@@ -1434,7 +1434,7 @@ var initialBoard = [
   {
     "id": 136,
     "x": 1104,
-    "y": 471,
+    "y": 472,
     "active": false,
     "connectedNodes": [
 	  133,
@@ -1626,7 +1626,7 @@ var initialBoard = [
   {
     "id": 154,
     "x": 1134,
-    "y": 628,
+    "y": 629,
     "active": false,
     "connectedNodes": [
 	  153,
@@ -1667,7 +1667,7 @@ var initialBoard = [
   {
     "id": 158,
     "x": 1187,
-    "y": 471,
+    "y": 472,
     "active": false,
     "connectedNodes": [
 	  136,
@@ -1687,7 +1687,7 @@ var initialBoard = [
   {
     "id": 160,
     "x": 1026,
-    "y": 842,
+    "y": 843,
     "active": false,
     "connectedNodes": [
 	  159,
@@ -1709,7 +1709,7 @@ var initialBoard = [
   {
     "id": 162,
     "x": 1065,
-    "y": 877,
+    "y": 878,
     "active": false,
     "connectedNodes": [
 	  160,
@@ -1773,7 +1773,7 @@ var initialBoard = [
   {
     "id": 168,
     "x": 1246,
-    "y": 648,
+    "y": 649,
     "active": false,
     "connectedNodes": [
 	  167,
@@ -1816,7 +1816,7 @@ var initialBoard = [
   {
     "id": 172,
     "x": 1289,
-    "y": 616,
+    "y": 617,
     "active": false,
     "connectedNodes": [
 	  168,
@@ -1846,7 +1846,7 @@ var initialBoard = [
   {
     "id": 175,
     "x": 1332,
-    "y": 526,
+    "y": 527,
     "active": false,
     "connectedNodes": [
 	  174,
@@ -1913,7 +1913,7 @@ var initialBoard = [
   {
     "id": 181,
     "x": 1417,
-    "y": 215,
+    "y": 216,
     "active": false,
     "connectedNodes": [
 	  180,
@@ -1924,7 +1924,7 @@ var initialBoard = [
   {
     "id": 182,
     "x": 1385,
-    "y": 270,
+    "y": 271,
     "active": false,
     "connectedNodes": [
 	  181,
@@ -1943,7 +1943,7 @@ var initialBoard = [
   {
     "id": 184,
     "x": 1481,
-    "y": 215,
+    "y": 216,
     "active": false,
     "connectedNodes": [
 	  181,
@@ -1985,7 +1985,7 @@ var initialBoard = [
   {
     "id": 188,
     "x": 1529,
-    "y": 298,
+    "y": 299,
     "active": false,
     "connectedNodes": [
 	  184,
@@ -2027,7 +2027,7 @@ var initialBoard = [
   {
     "id": 192,
     "x": 1575,
-    "y": 378,
+    "y": 379,
     "active": false,
     "connectedNodes": [
 	  188,
@@ -2038,8 +2038,8 @@ var initialBoard = [
   },
   {
     "id": 193,
-    "x": 1524,
-    "y": 378,
+    "x": 1525,
+    "y": 379,
     "active": false,
     "connectedNodes": [
 	  192,
@@ -2049,7 +2049,7 @@ var initialBoard = [
   {
     "id": 194,
     "x": 1509,
-    "y": 427,
+    "y": 428,
     "active": false,
     "connectedNodes": [
 	  193,
@@ -2070,7 +2070,7 @@ var initialBoard = [
   {
     "id": 197,
     "x": 1575,
-    "y": 459,
+    "y": 460,
     "active": false,
     "connectedNodes": [
 	  192,
@@ -2091,7 +2091,7 @@ var initialBoard = [
   {
     "id": 199,
     "x": 1616,
-    "y": 465,
+    "y": 466,
     "active": false,
     "connectedNodes": [
 	  197,
@@ -2223,7 +2223,7 @@ var initialBoard = [
   {
     "id": 212,
     "x": 1417,
-    "y": 622,
+    "y": 623,
     "active": false,
     "connectedNodes": [
 	  204,
@@ -2244,7 +2244,7 @@ var initialBoard = [
   },
   {
     "id": 214,
-    "x": 1478,
+    "x": 1479,
     "y": 592,
     "active": false,
     "connectedNodes": [
@@ -2315,7 +2315,7 @@ var initialBoard = [
   {
     "id": 221,
     "x": 1620,
-    "y": 622,
+    "y": 623,
     "active": false,
     "connectedNodes": [
 	  216,
@@ -2337,7 +2337,7 @@ var initialBoard = [
   {
     "id": 223,
     "x": 1214,
-    "y": 848,
+    "y": 849,
     "active": false,
     "connectedNodes": [
 	  166,
@@ -2348,7 +2348,7 @@ var initialBoard = [
   {
     "id": 224,
     "x": 1250,
-    "y": 848,
+    "y": 849,
     "active": false,
     "connectedNodes": [
 	  223,
@@ -2359,7 +2359,7 @@ var initialBoard = [
   {
     "id": 225,
     "x": 1283,
-    "y": 881,
+    "y": 882,
     "active": false,
     "connectedNodes": [
 	  224,
@@ -2399,7 +2399,7 @@ var initialBoard = [
   {
     "id": 229,
     "x": 1214,
-    "y": 936,
+    "y": 937,
     "active": false,
     "connectedNodes": [
 	  223,
@@ -2409,7 +2409,7 @@ var initialBoard = [
   {
     "id": 230,
     "x": 1417,
-    "y": 936,
+    "y": 937,
     "active": false,
     "connectedNodes": [
 	  229,
@@ -2430,7 +2430,7 @@ var initialBoard = [
   {
     "id": 232,
     "x": 1417,
-    "y": 838,
+    "y": 839,
     "active": false,
     "connectedNodes": [
 	  204,
@@ -2452,7 +2452,7 @@ var initialBoard = [
   {
     "id": 234,
     "x": 1458,
-    "y": 838,
+    "y": 839,
     "active": false,
     "connectedNodes": [
 	  232,
@@ -2462,7 +2462,7 @@ var initialBoard = [
   {
     "id": 235,
     "x": 1498,
-    "y": 838,
+    "y": 839,
     "active": false,
     "connectedNodes": [
 	  234,
@@ -2554,7 +2554,7 @@ var initialBoard = [
   {
     "id": 244,
     "x": 1620,
-    "y": 838,
+    "y": 839,
     "active": false,
     "connectedNodes": [
 	  243,
@@ -2565,7 +2565,7 @@ var initialBoard = [
   {
     "id": 245,
     "x": 1620,
-    "y": 745,
+    "y": 746,
     "active": false,
     "connectedNodes": [
 	  244,
