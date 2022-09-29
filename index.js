@@ -22,11 +22,26 @@ function init() {
 		rightClick(nodeId, ctx);
 	});
 	
+	drawAll(ctx);
+}
+
+function drawAll(ctx) {
 	let background = new Image();
 	background.src = "background.png";
 	background.onload = function() {
 		ctx.drawImage(background, 0, 0);
 		renderNodes(board, ctx);
+		
+		let pointsUsed = 0;
+		Object.keys(board).forEach(id => {
+			if (board[id].active) {
+				pointsUsed++;
+			}
+		});
+		
+		ctx.fillStyle = "yellow";
+		ctx.font = '12px sans-serif';
+		ctx.fillText((pointsUsed - 1) + 'p', 1780, 97);
 	};
 }
 
@@ -45,15 +60,17 @@ function leftClick(nodeId, ctx) {
 		} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId])) {
 			board[nodeId].active = true;
 		}
-
-		renderNodes(board, ctx);
+			
+		drawAll(ctx);
+		// renderNodes(board, ctx);
 	}
 }
 
 function rightClick(nodeId, ctx) {
 	if (nodeId > 1) {
 		activateShortestPath(board[nodeId]);
-		renderNodes(board, ctx);
+		// renderNodes(board, ctx);
+		drawAll(ctx);
 	}
 }
 

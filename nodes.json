@@ -2517,7 +2517,7 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  126,
-	  240
+	  241
     ]
   },
   {
