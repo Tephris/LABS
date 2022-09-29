@@ -1964,8 +1964,8 @@ var initialBoard = [
   },
   {
     "id": 186,
-    "x": 1501,
-    "y": 104,
+    "x": 1502,
+    "y": 105,
     "active": false,
     "connectedNodes": [
 	  185,
