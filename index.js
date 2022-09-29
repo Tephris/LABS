@@ -62,14 +62,12 @@ function leftClick(nodeId, ctx) {
 		}
 			
 		drawAll(ctx);
-		// renderNodes(board, ctx);
 	}
 }
 
 function rightClick(nodeId, ctx) {
 	if (nodeId > 1) {
 		activateShortestPath(board[nodeId]);
-		// renderNodes(board, ctx);
 		drawAll(ctx);
 	}
 }
@@ -79,7 +77,7 @@ function renderNodes(nodes, ctx) {
 		ctx.beginPath();
 		ctx.arc(node.x, node.y, 10, 0, 2 * Math.PI);
 		ctx.stroke();
-		ctx.fillStyle = node.active ? "green" : "red";
+		ctx.fillStyle = node.active ? "#39FF14" : "red";
 		ctx.fill();
 	}
 }
