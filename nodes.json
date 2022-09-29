@@ -111,7 +111,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  10,
-	  12
+	  12,
+	  165
     ]
   },
   {
@@ -175,7 +176,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  16,
-	  18
+	  18,
+	  28
     ]
   },
   {
@@ -194,7 +196,9 @@ var initialBoard = [
     "y": 839,
     "active": false,
     "connectedNodes": [
-	  18
+	  18,
+	  205,
+	  206
     ]
   },
   {
@@ -275,7 +279,8 @@ var initialBoard = [
     "connectedNodes": [
 	  59,
 	  12,
-	  25
+	  25,
+	  40
     ]
   },
   {
@@ -284,7 +289,227 @@ var initialBoard = [
     "y": 726,
     "active": false,
     "connectedNodes": [
+	  24,
+	  26
+    ]
+  },
+  {
+    "id": 26,
+    "x": 317,
+    "y": 726,
+    "active": false,
+    "connectedNodes": [
+	  25,
+	  27
+    ]
+  },
+  {
+    "id": 27,
+    "x": 278,
+    "y": 726,
+    "active": false,
+    "connectedNodes": [
+	  26,
+	  173
+    ]
+  },
+  {
+    "id": 28,
+    "x": 186,
+    "y": 746,
+    "active": false,
+    "connectedNodes": [
+	  17
+    ]
+  },
+  {
+    "id": 28,
+    "x": 186,
+    "y": 746,
+    "active": false,
+    "connectedNodes": [
+	  17,
+	  29,
+	  31
+    ]
+  },
+  {
+    "id": 29,
+    "x": 146,
+    "y": 724,
+    "active": false,
+    "connectedNodes": [
+	  28,
+	  30
+    ]
+  },
+  {
+    "id": 30,
+    "x": 94,
+    "y": 724,
+    "active": false,
+    "connectedNodes": [
+	  29,
+	  210
+    ]
+  },
+  {
+    "id": 31,
+    "x": 186,
+    "y": 623,
+    "active": false,
+    "connectedNodes": [
+	  28,
+	  32,
+	  34,
+	  37
+    ]
+  },
+  {
+    "id": 32,
+    "x": 127,
+    "y": 591,
+    "active": false,
+    "connectedNodes": [
+	  31,
+	  33,
+	  213
+    ]
+  },
+  {
+    "id": 33,
+    "x": 100,
+    "y": 538,
+    "active": false,
+    "connectedNodes": [
+	  32,
+	  213
+    ]
+  },
+  {
+    "id": 34,
+    "x": 250,
+    "y": 592,
+    "active": false,
+    "connectedNodes": [
+	  31,
+	  35
+    ]
+  },
+  {
+    "id": 35,
+    "x": 288,
+    "y": 574,
+    "active": false,
+    "connectedNodes": [
+	  34,
+	  36
+    ]
+  },
+  {
+    "id": 36,
+    "x": 327,
+    "y": 592,
+    "active": false,
+    "connectedNodes": [
+	  35,
+	  40
+    ]
+  },
+  {
+    "id": 37,
+    "x": 250,
+    "y": 654,
+    "active": false,
+    "connectedNodes": [
+	  31,
+	  38
+    ]
+  },
+  {
+    "id": 38,
+    "x": 288,
+    "y": 672,
+    "active": false,
+    "connectedNodes": [
+	  37,
+	  39
+    ]
+  },
+  {
+    "id": 39,
+    "x": 327,
+    "y": 654,
+    "active": false,
+    "connectedNodes": [
+	  38,
+	  40
+    ]
+  },
+  {
+    "id": 40,
+    "x": 389,
+    "y": 623,
+    "active": false,
+    "connectedNodes": [
+	  36,
+	  39,
 	  24
+    ]
+  },
+  {
+    "id": 165,
+    "x": 339,
+    "y": 907,
+    "active": false,
+    "connectedNodes": [
+	  11
+    ]
+  },
+  {
+    "id": 173,
+    "x": 228,
+    "y": 727,
+    "active": false,
+    "connectedNodes": [
+	  27
+    ]
+  },
+  {
+    "id": 205,
+    "x": 42,
+    "y": 771,
+    "active": false,
+    "connectedNodes": [
+	  19
+    ]
+  },
+  {
+    "id": 206,
+    "x": 42,
+    "y": 909,
+    "active": false,
+    "connectedNodes": [
+	  19
+    ]
+  },
+  {
+    "id": 210,
+    "x": 127,
+    "y": 661,
+    "active": false,
+    "connectedNodes": [
+	  30
+    ]
+  },
+  {
+    "id": 213,
+    "x": 69,
+    "y": 589,
+    "active": false,
+    "connectedNodes": [
+	  32,
+	  33
     ]
   },
 ];

@@ -10,6 +10,7 @@ function init() {
 	canvas.addEventListener('click', function(e) {
 		let position = getCursorPosition(canvas, e, ctx);
 		let nodeId = detectClickedNode(board, position.x, position.y);
+		console.log("Node: " + nodeId);
 		leftClick(nodeId, ctx);
 	});
 	
@@ -33,7 +34,7 @@ function getCursorPosition(canvas, event, ctx) {
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-	
+	console.log("x: " + x + " y: " + y);
 	return { x, y };	
 }
 
@@ -50,8 +51,10 @@ function leftClick(nodeId, ctx) {
 }
 
 function rightClick(nodeId, ctx) {
-	activateShortestPath(board[nodeId]);
-	renderNodes(board, ctx);
+	if (nodeId > 1) {
+		activateShortestPath(board[nodeId]);
+		renderNodes(board, ctx);
+	}
 }
 
 function renderNodes(nodes, ctx) {
