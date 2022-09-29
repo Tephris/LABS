@@ -41,7 +41,7 @@ function getCursorPosition(canvas, event, ctx) {
 function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
 		if (board[nodeId].active) {
-			deactivateNodeIfAllowed(board[nodeId]);
+			deactivateAllDependentNodes(board[nodeId]);
 		} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId])) {
 			board[nodeId].active = true;
 		}
@@ -90,10 +90,10 @@ function hasActiveConnectedNode(node) {
 	return false;
 }
 
-function deactivateNodeIfAllowed(node) {	
+function deactivateAllDependentNodes(node) {	
 	node.active = false;
 	let visited = [];
-	var dfsCount = dfs(board[1], visited);
+	dfs(board[1], visited);
 	Object.keys(board).forEach(id => {
 		if (!visited.includes(parseInt(id))) {
 			board[id].active = false;
