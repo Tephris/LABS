@@ -77,7 +77,7 @@ function renderNodes(nodes, ctx) {
 		ctx.beginPath();
 		ctx.arc(node.x, node.y, 10, 0, 2 * Math.PI);
 		ctx.stroke();
-		ctx.fillStyle = node.active ? "#39FF14" : "red";
+		ctx.fillStyle = node.active ? "#39FF14" : "#9B1003";
 		ctx.fill();
 	}
 }
