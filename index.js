@@ -60,12 +60,24 @@ function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
 		if (board[nodeId].active) {
 			deactivateAllDependentNodes(board[nodeId]);
-		} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId])) {
+		} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkillActivation(nodeId)) {
 			board[nodeId].active = true;
 		}
 			
 		drawAll(ctx);
 	}
+}
+
+function validateAwakeningSkillActivation(nodeId) {
+	const leftTopSkillId = "205";
+	const leftBottomSkillId = "206";
+	const rightTopSkillId = "281";
+	const rightBottomSkillId = "282";
+	
+	return !((nodeId == leftTopSkillId && board[leftBottomSkillId].active)
+		|| (nodeId == leftBottomSkillId && board[leftTopSkillId].active)
+		|| (nodeId == rightTopSkillId && board[rightBottomSkillId].active)
+		|| (nodeId == rightBottomSkillId && board[rightTopSkillId].active));
 }
 
 function isResetButton(x, y) {
