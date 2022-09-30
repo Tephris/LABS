@@ -1,5 +1,6 @@
 window.onload = init;
 var board = Object.assign({}, ...initialBoard.map((node) => ({[node.id]: {"id": node.id, "x": node.x, "y": node.y, "active": node.active, "connectedNodes": node.connectedNodes}})));
+var nodeSelectionEnabled = false;
 
 function init() {
 	let canvas = document.getElementById("board");
@@ -13,7 +14,18 @@ function init() {
 		console.log("Node: " + nodeId);
 		leftClick(nodeId, ctx);
 		if (isResetButton(position.x, position.y)) {
-			resetBoard(ctx);
+			resetBoard(true);
+			drawAll(ctx);
+		}
+		
+		if (isNodeSelectionButton(position.x, position.y)) {
+			nodeSelectionEnabled = !nodeSelectionEnabled;
+			drawAll(ctx);
+		}
+		
+		if (isOptimizeButton(position.x, position.y)) {
+			generateOptimalTree();
+			drawAll(ctx);
 		}
 	});
 	
@@ -23,6 +35,16 @@ function init() {
 		let position = getCursorPosition(canvas, e, ctx);
 		let nodeId = detectClickedNode(board, position.x, position.y);
 		rightClick(nodeId, ctx);
+	});
+	
+	canvas.addEventListener('mousedown', function(e) {
+		if (e.button == 1 || e.buttons == 4) {			
+			e.preventDefault();
+			
+			let position = getCursorPosition(canvas, e, ctx);
+			let nodeId = detectClickedNode(board, position.x, position.y);
+			middleClick(nodeId, ctx);
+		}
 	});
 	
 	drawAll(ctx);
@@ -45,6 +67,14 @@ function drawAll(ctx) {
 		ctx.fillStyle = "yellow";
 		ctx.font = '12px sans-serif';
 		ctx.fillText((pointsUsed - 1) + 'p', 1780, 97);
+		
+		ctx.fillStyle = "white";
+		ctx.font = '14px sans-serif';
+		ctx.fillText("Reset", 85, 981);
+		ctx.fillText("Optimize", 464, 981);
+		
+		ctx.fillStyle = nodeSelectionEnabled ? "yellow" : "white";
+		ctx.fillText("Select Nodes", 255, 981);
 	};
 }
 
@@ -56,14 +86,42 @@ function getCursorPosition(canvas, event, ctx) {
 	return { x, y };	
 }
 
+function isBelowPrioritizationLimit() {
+	// Limit optimal tree generation to use a max of 6 prioritized nodes due to computation time
+	let numberOfPrioritizeNodes = Object.values(board).filter(node => node.prioritize).length;
+	return numberOfPrioritizeNodes < 6;
+}
+
+function canTogglePriority(nodeId) {
+	return (isBelowPrioritizationLimit() || board[nodeId].prioritize);
+}
+
 function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
-		if (board[nodeId].active) {
-			deactivateAllDependentNodes(board[nodeId]);
-		} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkillActivation(nodeId)) {
-			board[nodeId].active = true;
+		if (nodeSelectionEnabled && validateAwakeningSkillPrioritization(nodeId) && canTogglePriority(nodeId)) {
+			board[nodeId].prioritize = !board[nodeId].prioritize;
+		} else {
+			if (board[nodeId].active) {
+				deactivateAllDependentNodes(board[nodeId]);
+			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkillActivation(nodeId)) {	
+				board[nodeId].active = true;
+			}			
 		}
 			
+		drawAll(ctx);
+	}
+}
+
+function middleClick(nodeId, ctx) {
+	if (nodeId > 1 && validateAwakeningSkillPrioritization(nodeId) && canTogglePriority(nodeId)) {
+		board[nodeId].prioritize = !board[nodeId].prioritize;
+		drawAll(ctx);
+	}
+}
+
+function rightClick(nodeId, ctx) {
+	if (nodeId > 1) {
+		activateShortestPath(board[nodeId]);
 		drawAll(ctx);
 	}
 }
@@ -80,34 +138,58 @@ function validateAwakeningSkillActivation(nodeId) {
 		|| (nodeId == rightBottomSkillId && board[rightTopSkillId].active));
 }
 
+function validateAwakeningSkillPrioritization(nodeId) {
+	const leftTopSkillId = "205";
+	const leftBottomSkillId = "206";
+	const rightTopSkillId = "281";
+	const rightBottomSkillId = "282";
+	
+	return !((nodeId == leftTopSkillId && board[leftBottomSkillId].prioritize)
+		|| (nodeId == leftBottomSkillId && board[leftTopSkillId].prioritize)
+		|| (nodeId == rightTopSkillId && board[rightBottomSkillId].prioritize)
+		|| (nodeId == rightBottomSkillId && board[rightTopSkillId].prioritize));
+}
+
 function isResetButton(x, y) {
 	return x >= 12 && x <= 199 && y >= 962 && y <= 992;
 }
 
-function resetBoard(ctx) {
+function isNodeSelectionButton(x, y) {
+	return x >= 205 && x <= 392 && y >= 962 && y <= 992;
+}
+
+function isOptimizeButton(x, y) {
+	return x >= 399 && x <= 585 && y >= 962 && y <= 992;
+}
+
+function resetBoard(deprioritize) {
 	Object.keys(board).forEach(id => {
 		if (id > 1) {
 			board[id].active = false;
+			if (deprioritize) {				
+				board[id].prioritize = false;
+			}
 		}
 	});
-	
-	drawAll(ctx);
-}
-
-function rightClick(nodeId, ctx) {
-	if (nodeId > 1) {
-		activateShortestPath(board[nodeId]);
-		drawAll(ctx);
-	}
 }
 
 function renderNodes(nodes, ctx) {
 	for (const [id, node] of Object.entries(nodes)) {
 		ctx.beginPath();
 		ctx.arc(node.x, node.y, 10, 0, 2 * Math.PI);
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = "black";
 		ctx.stroke();
 		ctx.fillStyle = node.active ? "#39FF14" : "#9B1003";
 		ctx.fill();
+		
+		if (node.prioritize) {
+			ctx.beginPath();
+			ctx.arc(node.x, node.y, 15, 0, 2 * Math.PI);
+			ctx.lineWidth = 4;
+			ctx.strokeStyle = "yellow";
+			ctx.stroke();
+		}
 	}
 }
 
@@ -174,12 +256,7 @@ function dfs(node, visited) {
 }
 
 function activateShortestPath(currentNode) {
-	let stopNodes = [];
-	Object.keys(board).forEach(id => {
-		if (board[id].active) {
-			stopNodes.push(board[id]);
-		}
-	});
+	let stopNodes = Object.values(board).filter(node => node.active);
 	
 	let currentBest = bfs(currentNode, stopNodes[0]);
 	currentBest.stopNode = stopNodes[0];
@@ -236,4 +313,47 @@ function getPath(pathMap, stopNode) {
 	}
 	
 	return path;
+}
+
+function generateOptimalTree() {
+	let targetNodes = Object.values(board).filter(node => node.prioritize).map(node => node.id);
+
+	let currentMin = Object.keys(board).length;
+	let currentBoard = structuredClone(board);
+	let permutations = getPermutations(targetNodes);
+	
+	for (let permutation of permutations) {
+		resetBoard(false);
+		for (let nodeId of permutation) {
+			activateShortestPath(board[nodeId]);
+		}
+		
+		let pointCount = Object.values(board).filter(node => node.active).length;
+		if (pointCount < currentMin) {
+			currentMin = pointCount;
+			currentBoard = structuredClone(board);
+		}
+	}
+	
+	board = currentBoard;
+}
+
+function getPermutations(array) {
+	let result = [];
+	permute(array, [], result);
+	return result;
+}
+
+function permute(array, permutation, result) {
+	if (array.length === 0) {
+		result.push(permutation)
+	} else {
+		for (let i = 0; i < array.length; i++) {
+			let current = array.slice();
+			let next = current.splice(i, 1);
+			permute(current, permutation.concat(next), result);
+		}
+	}
+	
+	return result;
 }
