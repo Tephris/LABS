@@ -96,7 +96,8 @@ var initialBoard = [
 	  9,
 	  57,
 	  41
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 9,
@@ -107,7 +108,8 @@ var initialBoard = [
 	  8,
 	  10,
 	  20
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 10,
@@ -117,7 +119,8 @@ var initialBoard = [
     "connectedNodes": [
 	  9,
 	  11
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 11,
@@ -128,7 +131,8 @@ var initialBoard = [
 	  10,
 	  12,
 	  165
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 12,
@@ -140,7 +144,8 @@ var initialBoard = [
 	  13,
 	  23,
 	  24
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 13,
@@ -151,7 +156,8 @@ var initialBoard = [
 	  12,
 	  14,
 	  15
-    ]
+    ],
+	"Basic Stats": "+1000"
   },
   {
     "id": 14,
@@ -161,7 +167,8 @@ var initialBoard = [
     "connectedNodes": [
 	  13,
 	  16
-    ]
+    ],
+	"Basic Stats": "+1000"
   },
   {
     "id": 15,
@@ -171,7 +178,8 @@ var initialBoard = [
     "connectedNodes": [
 	  13,
 	  16
-    ]
+    ],
+	"Strength / Magic": "+2000"
   },
   {
     "id": 16,
@@ -182,7 +190,9 @@ var initialBoard = [
 	  14,
 	  15,
 	  17
-    ]
+    ],
+	"Basic Stats %": "+1",
+	"Strength / Magic %": "+1"
   },
   {
     "id": 17,
@@ -193,7 +203,8 @@ var initialBoard = [
 	  16,
 	  18,
 	  28
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 18,
@@ -203,7 +214,8 @@ var initialBoard = [
     "connectedNodes": [
 	  17,
 	  19
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 19,
@@ -214,7 +226,8 @@ var initialBoard = [
 	  18,
 	  205,
 	  206
-    ]
+    ],
+	"Other": "Class Specific Skill (Lower Left)\nBonus"
   },
   {
     "id": 20,
@@ -224,7 +237,8 @@ var initialBoard = [
     "connectedNodes": [
 	  9,
 	  21
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 21,
@@ -234,7 +248,8 @@ var initialBoard = [
     "connectedNodes": [
 	  20,
 	  22
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 22,
@@ -244,7 +259,8 @@ var initialBoard = [
     "connectedNodes": [
 	  21,
 	  23
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 23,
@@ -254,7 +270,8 @@ var initialBoard = [
     "connectedNodes": [
 	  22,
 	  12
-    ]
+    ],
+	"Other": "Awakening Stone Slot\n(Lower Left)"
   },
   {
     "id": 24,
@@ -266,7 +283,8 @@ var initialBoard = [
 	  12,
 	  25,
 	  40
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 25,
@@ -276,7 +294,8 @@ var initialBoard = [
     "connectedNodes": [
 	  24,
 	  26
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 26,
@@ -286,7 +305,8 @@ var initialBoard = [
     "connectedNodes": [
 	  25,
 	  27
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 27,
@@ -296,16 +316,8 @@ var initialBoard = [
     "connectedNodes": [
 	  26,
 	  173
-    ]
-  },
-  {
-    "id": 28,
-    "x": 186,
-    "y": 746,
-    "active": false,
-    "connectedNodes": [
-	  17
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 28,
@@ -316,7 +328,8 @@ var initialBoard = [
 	  17,
 	  29,
 	  31
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 29,
@@ -326,7 +339,8 @@ var initialBoard = [
     "connectedNodes": [
 	  28,
 	  30
-    ]
+    ],
+	"Luck": "+1000"
   },
   {
     "id": 30,
@@ -336,7 +350,8 @@ var initialBoard = [
     "connectedNodes": [
 	  29,
 	  210
-    ]
+    ],
+	"Luck": "+1000"
   },
   {
     "id": 31,
@@ -348,7 +363,8 @@ var initialBoard = [
 	  32,
 	  34,
 	  37
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 32,
@@ -359,7 +375,8 @@ var initialBoard = [
 	  31,
 	  33,
 	  213
-    ]
+    ],
+	"Dual Minimum Damage": "+12"
   },
   {
     "id": 33,
@@ -369,7 +386,8 @@ var initialBoard = [
     "connectedNodes": [
 	  32,
 	  213
-    ]
+    ],
+	"Dual Minimum Damage": "+12"
   },
   {
     "id": 34,
@@ -379,7 +397,8 @@ var initialBoard = [
     "connectedNodes": [
 	  31,
 	  35
-    ]
+    ],
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 35,
@@ -389,7 +408,8 @@ var initialBoard = [
     "connectedNodes": [
 	  34,
 	  36
-    ]
+    ],
+	"Dual Minimum Damage": "+16"
   },
   {
     "id": 36,
@@ -399,7 +419,8 @@ var initialBoard = [
     "connectedNodes": [
 	  35,
 	  40
-    ]
+    ],
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 37,
@@ -409,7 +430,8 @@ var initialBoard = [
     "connectedNodes": [
 	  31,
 	  38
-    ]
+    ],
+	"Dual Maximum Damage": "+8"
   },
   {
     "id": 38,
@@ -419,7 +441,8 @@ var initialBoard = [
     "connectedNodes": [
 	  37,
 	  39
-    ]
+    ],
+	"Dual Maximum Damage": "+16"
   },
   {
     "id": 39,
@@ -429,7 +452,8 @@ var initialBoard = [
     "connectedNodes": [
 	  38,
 	  40
-    ]
+    ],
+	"Dual Maximum Damage": "+8"
   },
   {
     "id": 40,
@@ -441,7 +465,8 @@ var initialBoard = [
 	  39,
 	  24,
 	  51
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 41,
@@ -452,7 +477,8 @@ var initialBoard = [
 	  8,
 	  42,
 	  80
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 42,
@@ -463,7 +489,8 @@ var initialBoard = [
 	  41,
 	  43,
 	  46
-    ]
+    ],
+	"Dual Defense Penetration": "+3"
   },
   {
     "id": 43,
@@ -474,7 +501,8 @@ var initialBoard = [
 	  42,
 	  44,
 	  49
-    ]
+    ],
+	"Dual Defense Penetration": "+3"
   },
   {
     "id": 44,
@@ -484,7 +512,8 @@ var initialBoard = [
     "connectedNodes": [
 	  43,
 	  45
-    ]
+    ],
+	"Dual Defense Penetration": "+6"
   },
   {
     "id": 45,
@@ -495,7 +524,8 @@ var initialBoard = [
 	  44,
 	  49,
 	  50
-    ]
+    ],
+	"Dual Defense Penetration": "+3"
   },
   {
     "id": 46,
@@ -506,7 +536,8 @@ var initialBoard = [
 	  42,
 	  47,
 	  49
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 47,
@@ -516,7 +547,8 @@ var initialBoard = [
     "connectedNodes": [
 	  46,
 	  48
-    ]
+    ],
+	"Dual Critical Damage": "+8"
   },
   {
     "id": 48,
@@ -527,7 +559,8 @@ var initialBoard = [
 	  47,
 	  49,
 	  50
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 49,
@@ -539,7 +572,8 @@ var initialBoard = [
 	  46,
 	  43,
 	  45
-    ]
+    ],
+	"Dual Critical Rate": "+3"
   },
   {
     "id": 50,
@@ -551,7 +585,8 @@ var initialBoard = [
 	  48,
 	  51,
 	  86
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 51,
@@ -562,7 +597,8 @@ var initialBoard = [
 	  50,
 	  40,
 	  52
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 52,
@@ -573,7 +609,8 @@ var initialBoard = [
 	  51,
 	  53,
 	  71
-    ]
+    ],
+	"Basic Stats %": "+1"
   },
   {
     "id": 53,
@@ -584,7 +621,8 @@ var initialBoard = [
 	  52,
 	  54,
 	  55
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 54,
@@ -594,7 +632,8 @@ var initialBoard = [
     "connectedNodes": [
 	  53,
 	  55
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 55,
@@ -605,7 +644,8 @@ var initialBoard = [
 	  53,
 	  54,
 	  56
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 56,
@@ -617,7 +657,8 @@ var initialBoard = [
 	  228,
 	  60,
 	  63
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 57,
@@ -627,7 +668,8 @@ var initialBoard = [
     "connectedNodes": [
 	  8,
 	  58
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 58,
@@ -637,7 +679,8 @@ var initialBoard = [
     "connectedNodes": [
 	  57,
 	  59
-    ]
+    ],
+	"Dual Critical Damage": "+12"
   },
   {
     "id": 59,
@@ -647,7 +690,8 @@ var initialBoard = [
     "connectedNodes": [
 	  58,
 	  24
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 60,
@@ -658,7 +702,8 @@ var initialBoard = [
 	  56,
 	  61,
 	  62
-    ]
+    ],
+	"HP": "+2000"
   },
   {
     "id": 61,
@@ -668,7 +713,8 @@ var initialBoard = [
     "connectedNodes": [
 	  60,
 	  62
-    ]
+    ],
+	"HP %": "+1"
   },
   {
     "id": 62,
@@ -678,7 +724,8 @@ var initialBoard = [
     "connectedNodes": [
 	  60,
 	  61
-    ]
+    ],
+	"HP %": "+1"
   },
   {
     "id": 63,
@@ -689,7 +736,8 @@ var initialBoard = [
 	  56,
 	  64,
 	  67
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 64,
@@ -700,7 +748,8 @@ var initialBoard = [
 	  63,
 	  65,
 	  66
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 65,
@@ -710,7 +759,8 @@ var initialBoard = [
     "connectedNodes": [
 	  64,
 	  222
-    ]
+    ],
+	"Infinity Skill Level": "+1"
   },
   {
     "id": 66,
@@ -720,7 +770,8 @@ var initialBoard = [
     "connectedNodes": [
 	  64,
 	  222
-    ]
+    ],
+	"Infinity Skill Level": "+1"
   },
   {
     "id": 67,
@@ -731,7 +782,8 @@ var initialBoard = [
 	  63,
 	  68,
 	  70
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 68,
@@ -742,7 +794,8 @@ var initialBoard = [
 	  67,
 	  69,
 	  218
-    ]
+    ],
+	"Damage Mitigation %": "+1"
   },
   {
     "id": 69,
@@ -752,7 +805,8 @@ var initialBoard = [
     "connectedNodes": [
 	  68,
 	  218
-    ]
+    ],
+	"Damage Mitigation %": "+1"
   },
   {
     "id": 70,
@@ -763,7 +817,8 @@ var initialBoard = [
 	  67,
 	  71,
 	  72
-    ]
+    ],
+	"Basic Stats": "+250"
   },
   {
     "id": 71,
@@ -773,7 +828,8 @@ var initialBoard = [
     "connectedNodes": [
 	  70,
 	  52
-    ]
+    ],
+	"Stamina %": "+1"
   },
   {
     "id": 72,
@@ -783,7 +839,8 @@ var initialBoard = [
     "connectedNodes": [
 	  70,
 	  73
-    ]
+    ],
+	"Elemental Resistance": "+200"
   },
   {
     "id": 73,
@@ -792,7 +849,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  72
-    ]
+    ],
+	"Other": "Awakening Stone Slot\n(Upper Left)"
   },
   {
     "id": 74,
@@ -803,7 +861,8 @@ var initialBoard = [
 	  1,
 	  75,
 	  127
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 75,
@@ -813,7 +872,8 @@ var initialBoard = [
     "connectedNodes": [
 	  74,
 	  76
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 76,
@@ -823,7 +883,8 @@ var initialBoard = [
     "connectedNodes": [
 	  75,
 	  77
-    ]
+    ],
+	"Normal Added Damage %": "+1"
   },
   {
     "id": 77,
@@ -834,7 +895,9 @@ var initialBoard = [
 	  76,
 	  78,
 	  128
-    ]
+    ],
+	"Boss Added Damage": "+3000",
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 78,
@@ -846,7 +909,8 @@ var initialBoard = [
 	  79,
 	  107,
 	  129
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 79,
@@ -857,7 +921,8 @@ var initialBoard = [
 	  78,
 	  80,
 	  87
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 80,
@@ -868,7 +933,8 @@ var initialBoard = [
 	  79,
 	  41,
 	  81
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 81,
@@ -879,7 +945,9 @@ var initialBoard = [
 	  80,
 	  82,
 	  83
-    ]
+    ],
+	"Strength / Magic": "+1000",
+	"Luck": "+1000"
   },
   {
     "id": 82,
@@ -889,7 +957,8 @@ var initialBoard = [
     "connectedNodes": [
 	  81,
 	  84
-    ]
+    ],
+	"Luck %": "+1"
   },
   {
     "id": 83,
@@ -899,7 +968,8 @@ var initialBoard = [
     "connectedNodes": [
 	  81,
 	  84
-    ]
+    ],
+	"Strength / Magic %": "+1"
   },
   {
     "id": 84,
@@ -910,7 +980,9 @@ var initialBoard = [
 	  82,
 	  83,
 	  85
-    ]
+    ],
+	"Strength / Magic %": "+1",
+	"Luck %": "+1"
   },
   {
     "id": 85,
@@ -922,7 +994,8 @@ var initialBoard = [
 	  86,
 	  90,
 	  91
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 86,
@@ -932,7 +1005,8 @@ var initialBoard = [
     "connectedNodes": [
 	  85,
 	  50
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 87,
@@ -943,7 +1017,8 @@ var initialBoard = [
 	  79,
 	  88,
 	  89
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 88,
@@ -953,7 +1028,8 @@ var initialBoard = [
     "connectedNodes": [
 	  87,
 	  89
-    ]
+    ],
+	"Normal Damage Amplification %": "\n+0.2"
   },
   {
     "id": 89,
@@ -964,7 +1040,8 @@ var initialBoard = [
 	  87,
 	  88,
 	  90
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 90,
@@ -975,7 +1052,8 @@ var initialBoard = [
 	  89,
 	  85,
 	  134
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 91,
@@ -986,7 +1064,8 @@ var initialBoard = [
 	  85,
 	  92,
 	  95
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 92,
@@ -996,7 +1075,8 @@ var initialBoard = [
     "connectedNodes": [
 	  91,
 	  93
-    ]
+    ],
+	"Normal Damage Amplification %": "\n+0.2"
   },
   {
     "id": 93,
@@ -1006,7 +1086,8 @@ var initialBoard = [
     "connectedNodes": [
 	  92,
 	  94
-    ]
+    ],
+	"Normal Damage Amplification %": "\n+0.4"
   },
   {
     "id": 94,
@@ -1016,7 +1097,8 @@ var initialBoard = [
     "connectedNodes": [
 	  93,
 	  95
-    ]
+    ],
+	"Normal Damage Amplification %": "\n+0.2"
   },
   {
     "id": 95,
@@ -1027,7 +1109,8 @@ var initialBoard = [
 	  94,
 	  91,
 	  96
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 96,
@@ -1038,7 +1121,8 @@ var initialBoard = [
 	  95,
 	  97,
 	  99
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 97,
@@ -1048,7 +1132,8 @@ var initialBoard = [
     "connectedNodes": [
 	  96,
 	  98
-    ]
+    ],
+	"Normal Damage Amplification %": "\n+0.2"
   },
   {
     "id": 98,
@@ -1058,7 +1143,8 @@ var initialBoard = [
     "connectedNodes": [
 	  97,
 	  99
-    ]
+    ],
+	"Normal Added Damage %": "+1"
   },
   {
     "id": 99,
@@ -1069,7 +1155,8 @@ var initialBoard = [
 	  98,
 	  96,
 	  100
-    ]
+    ],
+	"Normal Added Damage": "+3000"
   },
   {
     "id": 100,
@@ -1080,7 +1167,8 @@ var initialBoard = [
 	  99,
 	  101,
 	  104
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 101,
@@ -1091,7 +1179,8 @@ var initialBoard = [
 	  100,
 	  102,
 	  233
-    ]
+    ],
+	"Dual Damage": "+5"
   },
   {
     "id": 102,
@@ -1101,7 +1190,8 @@ var initialBoard = [
     "connectedNodes": [
 	  101,
 	  103
-    ]
+    ],
+	"Dual Damage": "+5"
   },
   {
     "id": 103,
@@ -1111,7 +1201,8 @@ var initialBoard = [
     "connectedNodes": [
 	  102,
 	  233
-    ]
+    ],
+	"Other": "Class Specific Skill (Upper Left)\nBonus"
   },
   {
     "id": 104,
@@ -1122,7 +1213,8 @@ var initialBoard = [
 	  100,
 	  105,
 	  238
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 105,
@@ -1133,7 +1225,8 @@ var initialBoard = [
 	  104,
 	  106,
 	  237
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 106,
@@ -1143,7 +1236,8 @@ var initialBoard = [
     "connectedNodes": [
 	  105,
 	  237
-    ]
+    ],
+	"Other": "Legend I Skill 4 (L4) Level +1"
   },
   {
     "id": 107,
@@ -1154,7 +1248,8 @@ var initialBoard = [
 	  78,
 	  108,
 	  111
-    ]
+    ],
+	"Dual Static Damage": "+2000"
   },
   {
     "id": 108,
@@ -1164,7 +1259,8 @@ var initialBoard = [
     "connectedNodes": [
 	  107,
 	  109
-    ]
+    ],
+	"Dual Static Damage": "+2000"
   },
   {
     "id": 109,
@@ -1174,7 +1270,9 @@ var initialBoard = [
     "connectedNodes": [
 	  108,
 	  110
-    ]
+    ],
+	"Dual Static Damage %": "+2",
+	"Cooldown Reduction": "+5.0"
   },
   {
     "id": 110,
@@ -1184,7 +1282,8 @@ var initialBoard = [
     "connectedNodes": [
 	  109,
 	  114
-    ]
+    ],
+	"Dual Static Damage": "+2000"
   },
   {
     "id": 111,
@@ -1194,7 +1293,8 @@ var initialBoard = [
     "connectedNodes": [
 	  107,
 	  112
-    ]
+    ],
+	"Attack / Elemental Intensity": "+10"
   },
   {
     "id": 112,
@@ -1204,7 +1304,8 @@ var initialBoard = [
     "connectedNodes": [
 	  111,
 	  113
-    ]
+    ],
+	"Attack / Elemental Intensity %": "+2"
   },
   {
     "id": 113,
@@ -1214,7 +1315,8 @@ var initialBoard = [
     "connectedNodes": [
 	  112,
 	  114
-    ]
+    ],
+	"Attack / Elemental Intensity": "+10"
   },
   {
     "id": 114,
@@ -1225,7 +1327,9 @@ var initialBoard = [
 	  113,
 	  110,
 	  115
-    ]
+    ],
+	"Dual Static Damage": "+2000",
+	"Attack / Elemental Intensity": "+10"
   },
   {
     "id": 115,
@@ -1235,7 +1339,8 @@ var initialBoard = [
     "connectedNodes": [
 	  114,
 	  116
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 116,
@@ -1247,7 +1352,8 @@ var initialBoard = [
 	  117,
 	  119,
 	  123
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 117,
@@ -1257,7 +1363,9 @@ var initialBoard = [
     "connectedNodes": [
 	  116,
 	  118
-    ]
+    ],
+	"Strength / Magic": "+1000",
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 118,
@@ -1267,7 +1375,8 @@ var initialBoard = [
     "connectedNodes": [
 	  117,
 	  125
-    ]
+    ],
+	"Dual Minimum Damage %": "+3"
   },
   {
     "id": 119,
@@ -1278,7 +1387,8 @@ var initialBoard = [
 	  116,
 	  120,
 	  121
-    ]
+    ],
+	"Strength / Magic": "+2000"
   },
   {
     "id": 120,
@@ -1288,7 +1398,8 @@ var initialBoard = [
     "connectedNodes": [
 	  119,
 	  122
-    ]
+    ],
+	"Strength / Magic": "+2000"
   },
   {
     "id": 121,
@@ -1298,7 +1409,8 @@ var initialBoard = [
     "connectedNodes": [
 	  119,
 	  122
-    ]
+    ],
+	"Strength / Magic": "+2000"
   },
   {
     "id": 122,
@@ -1308,7 +1420,8 @@ var initialBoard = [
     "connectedNodes": [
 	  120,
 	  121
-    ]
+    ],
+	"Dual Critical Damage %": "+3"
   },
   {
     "id": 123,
@@ -1318,7 +1431,9 @@ var initialBoard = [
     "connectedNodes": [
 	  116,
 	  124
-    ]
+    ],
+	"Strength / Magic": "+1000",
+	"Dual Maximum Damage": "+8"
   },
   {
     "id": 124,
@@ -1328,7 +1443,8 @@ var initialBoard = [
     "connectedNodes": [
 	  123,
 	  125
-    ]
+    ],
+	"Dual Maximum Damage %": "+3"
   },
   {
     "id": 125,
@@ -1339,7 +1455,8 @@ var initialBoard = [
 	  118,
 	  124,
 	  126
-    ]
+    ],
+	"Dual Damage": "+8"
   },
   {
     "id": 126,
@@ -1349,7 +1466,8 @@ var initialBoard = [
     "connectedNodes": [
 	  125,
 	  240
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 127,
@@ -1359,7 +1477,8 @@ var initialBoard = [
     "connectedNodes": [
 	  74,
 	  128
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 128,
@@ -1369,7 +1488,8 @@ var initialBoard = [
     "connectedNodes": [
 	  127,
 	  77
-    ]
+    ],
+	"Boss Added Damage %": "+1"
   },
   {
     "id": 129,
@@ -1380,7 +1500,8 @@ var initialBoard = [
 	  78,
 	  130,
 	  153
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 130,
@@ -1391,7 +1512,8 @@ var initialBoard = [
 	  129,
 	  131,
 	  132
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 131,
@@ -1401,7 +1523,8 @@ var initialBoard = [
     "connectedNodes": [
 	  130,
 	  132
-    ]
+    ],
+	"Boss Damage Amplification %": "\n+0.2"
   },
   {
     "id": 132,
@@ -1412,7 +1535,8 @@ var initialBoard = [
 	  130,
 	  131,
 	  133
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 133,
@@ -1423,7 +1547,8 @@ var initialBoard = [
 	  132,
 	  135,
 	  136
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 134,
@@ -1432,7 +1557,9 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  90
-    ]
+    ],
+	"HP %": "-3",
+	"Normal Damage Amplification %": "\n+2.5"
   },
   {
     "id": 135,
@@ -1441,7 +1568,9 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  133
-    ]
+    ],
+	"HP %": "-3",
+	"Boss Damage Amplification %": "\n+2.5"
   },
   {
     "id": 136,
@@ -1453,7 +1582,8 @@ var initialBoard = [
 	  137,
 	  157,
 	  158
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 137,
@@ -1464,7 +1594,8 @@ var initialBoard = [
 	  136,
 	  138,
 	  141
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 138,
@@ -1474,7 +1605,8 @@ var initialBoard = [
     "connectedNodes": [
 	  137,
 	  139
-    ]
+    ],
+	"Boss Damage Amplification %": "\n+0.2"
   },
   {
     "id": 139,
@@ -1484,7 +1616,8 @@ var initialBoard = [
     "connectedNodes": [
 	  138,
 	  140
-    ]
+    ],
+	"Boss Damage Amplification %": "\n+0.4"
   },
   {
     "id": 140,
@@ -1494,7 +1627,8 @@ var initialBoard = [
     "connectedNodes": [
 	  139,
 	  141
-    ]
+    ],
+	"Boss Damage Amplification %": "\n+0.2"
   },
   {
     "id": 141,
@@ -1505,7 +1639,8 @@ var initialBoard = [
 	  140,
 	  137,
 	  142
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 142,
@@ -1517,7 +1652,8 @@ var initialBoard = [
 	  141,
 	  143,
 	  145
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 143,
@@ -1527,7 +1663,8 @@ var initialBoard = [
     "connectedNodes": [
 	  142,
 	  144
-    ]
+    ],
+	"Boss Damage Amplification %": "\n+0.2"
   },
   {
     "id": 144,
@@ -1537,7 +1674,8 @@ var initialBoard = [
     "connectedNodes": [
 	  143,
 	  145
-    ]
+    ],
+	"Boss Added Damage %": "+1"
   },
   {
     "id": 145,
@@ -1548,7 +1686,8 @@ var initialBoard = [
 	  144,
 	  142,
 	  146
-    ]
+    ],
+	"Boss Added Damage": "+3000"
   },
   {
     "id": 146,
@@ -1559,7 +1698,8 @@ var initialBoard = [
 	  145,
 	  147,
 	  150
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 147,
@@ -1570,7 +1710,8 @@ var initialBoard = [
 	  146,
 	  148,
 	  247
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 148,
@@ -1581,7 +1722,8 @@ var initialBoard = [
 	  147,
 	  149,
 	  246
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 149,
@@ -1591,7 +1733,8 @@ var initialBoard = [
     "connectedNodes": [
 	  148,
 	  246
-    ]
+    ],
+	"Other": "Legend II Skill 4 (LL4) Level +1"
   },
   {
     "id": 150,
@@ -1602,7 +1745,8 @@ var initialBoard = [
 	  146,
 	  151,
 	  252
-    ]
+    ],
+	"Dual Damage": "+5"
   },
   {
     "id": 151,
@@ -1612,7 +1756,8 @@ var initialBoard = [
     "connectedNodes": [
 	  150,
 	  152
-    ]
+    ],
+	"Dual Damage": "+5"
   },
   {
     "id": 152,
@@ -1622,7 +1767,8 @@ var initialBoard = [
     "connectedNodes": [
 	  151,
 	  252
-    ]
+    ],
+	"Other": "Class Specific Skill (Upper Right)\nBonus"
   },
   {
     "id": 153,
@@ -1633,7 +1779,8 @@ var initialBoard = [
 	  129,
 	  154,
 	  167
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 154,
@@ -1643,7 +1790,9 @@ var initialBoard = [
     "connectedNodes": [
 	  153,
 	  155
-    ]
+    ],
+	"Strength / Magic": "+1000",
+	"Stamina": "+1000",
   },
   {
     "id": 155,
@@ -1653,7 +1802,8 @@ var initialBoard = [
     "connectedNodes": [
 	  154,
 	  157
-    ]
+    ],
+	"Strength / Magic %": "+1"
   },
   {
     "id": 156,
@@ -1663,7 +1813,8 @@ var initialBoard = [
     "connectedNodes": [
 	  154,
 	  157
-    ]
+    ],
+	"Stamina %": "+1"
   },
   {
     "id": 157,
@@ -1674,7 +1825,9 @@ var initialBoard = [
 	  155,
 	  156,
 	  136
-    ]
+    ],
+	"Strength / Magic %": "+1",
+	"Stamina %": "+1"
   },
   {
     "id": 158,
@@ -1684,7 +1837,8 @@ var initialBoard = [
     "connectedNodes": [
 	  136,
 	  177
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 159,
@@ -1706,7 +1860,9 @@ var initialBoard = [
 	  159,
 	  161,
 	  162
-    ]
+    ],
+	"Defense": "+200",
+	"Elemental Resistance": "+200"
   },
   {
     "id": 161,
@@ -1717,7 +1873,9 @@ var initialBoard = [
 	  160,
 	  163,
 	  164
-    ]
+    ],
+	"Defense": "+200",
+	"Elemental Resistance": "+200"
   },
   {
     "id": 162,
@@ -1727,7 +1885,8 @@ var initialBoard = [
     "connectedNodes": [
 	  160,
 	  163
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 163,
@@ -1738,7 +1897,8 @@ var initialBoard = [
 	  162,
 	  161,
 	  164
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 164,
@@ -1749,7 +1909,10 @@ var initialBoard = [
 	  163,
 	  161,
 	  166
-    ]
+    ],
+	"Defense": "+200",
+	"Elemental Resistance": "+200",
+	"HP": "+1000"
   },
   {
     "id": 165,
@@ -1758,7 +1921,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  11
-    ]
+    ],
+	"Other": "Movement Speed +50 (60s)\nupon hitting enemies at a\n1% chance"
   },
   {
     "id": 166,
@@ -1770,7 +1934,8 @@ var initialBoard = [
 	  167,
 	  201,
 	  223
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 167,
@@ -1781,7 +1946,8 @@ var initialBoard = [
 	  166,
 	  153,
 	  168
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 168,
@@ -1792,7 +1958,8 @@ var initialBoard = [
 	  167,
 	  169,
 	  172
-    ]
+    ],
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 169,
@@ -1803,7 +1970,8 @@ var initialBoard = [
 	  168,
 	  170,
 	  176
-    ]
+    ],
+	"Dual Maximum Damage": "+8"
   },
   {
     "id": 170,
@@ -1813,7 +1981,8 @@ var initialBoard = [
     "connectedNodes": [
 	  169,
 	  171
-    ]
+    ],
+	"Dual Maximum Damage": "+16"
   },
   {
     "id": 171,
@@ -1824,7 +1993,8 @@ var initialBoard = [
 	  170,
 	  176,
 	  177
-    ]
+    ],
+	"Dual Maximum Damage": "+8"
   },
   {
     "id": 172,
@@ -1835,7 +2005,8 @@ var initialBoard = [
 	  168,
 	  174,
 	  176
-    ]
+    ],
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 173,
@@ -1844,7 +2015,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  27
-    ]
+    ],
+	"Other": "HP +(Ascension Level(x5))"
   },
   {
     "id": 174,
@@ -1854,7 +2026,8 @@ var initialBoard = [
     "connectedNodes": [
 	  172,
 	  175
-    ]
+    ],
+	"Dual Minimum Damage": "+16"
   },
   {
     "id": 175,
@@ -1865,7 +2038,8 @@ var initialBoard = [
 	  174,
 	  176,
 	  177
-    ]
+    ],
+	"Dual Minimum Damage": "+8"
   },
   {
     "id": 176,
@@ -1877,7 +2051,8 @@ var initialBoard = [
 	  172,
 	  171,
 	  175
-    ]
+    ],
+	"Dual Damage": "+13"
   },
   {
     "id": 177,
@@ -1889,7 +2064,8 @@ var initialBoard = [
 	  171,
 	  175,
 	  178
-    ]
+    ],
+	"Strength / Magic": "+500"
   },
   {
     "id": 178,
@@ -1900,7 +2076,8 @@ var initialBoard = [
 	  177,
 	  179,
 	  212
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 179,
@@ -1911,7 +2088,8 @@ var initialBoard = [
 	  178,
 	  180,
 	  195
-    ]
+    ],
+	"Basic Stats %": "+1"
   },
   {
     "id": 180,
@@ -1921,7 +2099,8 @@ var initialBoard = [
     "connectedNodes": [
 	  179,
 	  181
-    ]
+    ],
+	"Strength / Magic": "+2000"
   },
   {
     "id": 181,
@@ -1932,7 +2111,8 @@ var initialBoard = [
 	  180,
 	  182,
 	  184
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 182,
@@ -1942,7 +2122,8 @@ var initialBoard = [
     "connectedNodes": [
 	  181,
 	  183
-    ]
+    ],
+	"Defense": "+200"
   },
   {
     "id": 183,
@@ -1951,7 +2132,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  182
-    ]
+    ],
+	"Other": "Awakening Stone Slot\n(Upper Right)"
   },
   {
     "id": 184,
@@ -1962,7 +2144,8 @@ var initialBoard = [
 	  181,
 	  185,
 	  188
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 185,
@@ -1973,7 +2156,8 @@ var initialBoard = [
 	  184,
 	  186,
 	  187
-    ]
+    ],
+	"Movement Speed": "+10"
   },
   {
     "id": 186,
@@ -1983,7 +2167,8 @@ var initialBoard = [
     "connectedNodes": [
 	  185,
 	  187
-    ]
+    ],
+	"Special Points": "+1500"
   },
   {
     "id": 187,
@@ -1993,7 +2178,8 @@ var initialBoard = [
     "connectedNodes": [
 	  185,
 	  186
-    ]
+    ],
+	"Other": "Class Movement Skill Upgrade"
   },
   {
     "id": 188,
@@ -2004,7 +2190,8 @@ var initialBoard = [
 	  184,
 	  189,
 	  192
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 189,
@@ -2015,7 +2202,8 @@ var initialBoard = [
 	  188,
 	  190,
 	  191
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 190,
@@ -2025,7 +2213,8 @@ var initialBoard = [
     "connectedNodes": [
 	  189,
 	  260
-    ]
+    ],
+	"Other": "Class Specific Skill\n(Middle Right) Bonus (Top)"
   },
   {
     "id": 191,
@@ -2035,7 +2224,8 @@ var initialBoard = [
     "connectedNodes": [
 	  189,
 	  260
-    ]
+    ],
+	"Other": "Class Specific Skill\n(Middle Right) Bonus (Bottom)"
   },
   {
     "id": 192,
@@ -2047,7 +2237,8 @@ var initialBoard = [
 	  193,
 	  263,
 	  197
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 193,
@@ -2057,7 +2248,8 @@ var initialBoard = [
     "connectedNodes": [
 	  192,
 	  194
-    ]
+    ],
+	"Stun Resistance %": "+2.0"
   },
   {
     "id": 194,
@@ -2067,7 +2259,8 @@ var initialBoard = [
     "connectedNodes": [
 	  193,
 	  195
-    ]
+    ],
+	"Stun Resistance %": "+2.0"
   },
   {
     "id": 195,
@@ -2078,7 +2271,8 @@ var initialBoard = [
 	  179,
 	  193,
 	  194
-    ]
+    ],
+	"Stun Resistance %": "+2.0"
   },
   {
     "id": 197,
@@ -2089,7 +2283,8 @@ var initialBoard = [
 	  192,
 	  198,
 	  199
-    ]
+    ],
+	"Confusion Resistance %": "+2.0"
   },
   {
     "id": 198,
@@ -2099,7 +2294,8 @@ var initialBoard = [
     "connectedNodes": [
 	  197,
 	  200
-    ]
+    ],
+	"Confusion Resistance %": "+2.0"
   },
   {
     "id": 199,
@@ -2109,7 +2305,8 @@ var initialBoard = [
     "connectedNodes": [
 	  197,
 	  200
-    ]
+    ],
+	"Confusion Resistance %": "+2.0"
   },
   {
     "id": 200,
@@ -2119,7 +2316,8 @@ var initialBoard = [
     "connectedNodes": [
 	  198,
 	  199
-    ]
+    ],
+	"Other": "Awakening Stone Slot\n(Middle Right)"
   },
   {
     "id": 201,
@@ -2130,7 +2328,8 @@ var initialBoard = [
 	  166,
 	  202
     ],
-	"notes": "this is slot 103 in-game"
+	"notes": "this is slot 103 in-game",
+	"HP": "+2000"
   },
   {
     "id": 202,
@@ -2141,7 +2340,8 @@ var initialBoard = [
 	  201,
 	  203
     ],
-	"notes": "this is slot 104 in-game"
+	"notes": "this is slot 104 in-game",
+	"HP %": "+5"
   },
   {
     "id": 203,
@@ -2152,7 +2352,8 @@ var initialBoard = [
 	  202,
 	  204
     ],
-	"notes": "this is slot 105 in-game"
+	"notes": "this is slot 105 in-game",
+	"HP": "+2000"
   },
   {
     "id": 204,
@@ -2164,7 +2365,8 @@ var initialBoard = [
 	  207,
 	  212,
 	  232
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 205,
@@ -2173,7 +2375,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  19
-    ]
+    ],
+	"Other": "Awakened Skill (Lower Left)\nTop"
   },
   {
     "id": 206,
@@ -2182,7 +2385,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  19
-    ]
+    ],
+	"Other": "Awakened Skill (Lower Left)\nBottom"
   },
   {
     "id": 207,
@@ -2192,7 +2396,8 @@ var initialBoard = [
     "connectedNodes": [
 	  204,
 	  208
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 208,
@@ -2202,7 +2407,8 @@ var initialBoard = [
     "connectedNodes": [
 	  207,
 	  209
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 209,
@@ -2212,7 +2418,8 @@ var initialBoard = [
     "connectedNodes": [
 	  208,
 	  211
-    ]
+    ],
+	"Dual Back Attack Damage": "+10"
   },
   {
     "id": 210,
@@ -2221,7 +2428,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  30
-    ]
+    ],
+	"Other": "Critical Damage\n+(0.01/Ascension Lv.)"
   },
   {
     "id": 211,
@@ -2231,7 +2439,8 @@ var initialBoard = [
     "connectedNodes": [
 	  209
     ],
-	"notes": "this is slot 192 in-game"
+	"notes": "this is slot 192 in-game",
+	"Other": "When damage was taken while\nyour HP is 50% or lower:\nSkill Cooldown -20%\nCritical Rate +5\nMovement Speed +50\n30s Duration"
   },
   {
     "id": 212,
@@ -2243,7 +2452,8 @@ var initialBoard = [
 	  178,
 	  214,
 	  217
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 213,
@@ -2253,7 +2463,9 @@ var initialBoard = [
     "connectedNodes": [
 	  32,
 	  33
-    ]
+    ],
+	"Movement Speed": "-20",
+	"Normal Damage Amplification %": "\n+2.5"
   },
   {
     "id": 214,
@@ -2263,7 +2475,8 @@ var initialBoard = [
     "connectedNodes": [
 	  212,
 	  215
-    ]
+    ],
+	"Dual Defense Penetration": "+3"
   },
   {
     "id": 215,
@@ -2273,7 +2486,8 @@ var initialBoard = [
     "connectedNodes": [
 	  214,
 	  216
-    ]
+    ],
+	"Dual Defense Penetration": "+6"
   },
   {
     "id": 216,
@@ -2283,7 +2497,8 @@ var initialBoard = [
     "connectedNodes": [
 	  215,
 	  221
-    ]
+    ],
+	"Dual Defense Penetration": "+3"
   },
   {
     "id": 217,
@@ -2293,7 +2508,8 @@ var initialBoard = [
     "connectedNodes": [
 	  212,
 	  219
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 218,
@@ -2303,7 +2519,8 @@ var initialBoard = [
     "connectedNodes": [
 	  68,
 	  69
-    ]
+    ],
+	"All Skills (Excluding Summons)\nTarget": "+1"
   },
   {
     "id": 219,
@@ -2313,7 +2530,8 @@ var initialBoard = [
     "connectedNodes": [
 	  217,
 	  220
-    ]
+    ],
+	"Dual Critical Rate": "+1"
   },
   {
     "id": 220,
@@ -2323,7 +2541,8 @@ var initialBoard = [
     "connectedNodes": [
 	  219,
 	  221
-    ]
+    ],
+	"Dual Critical Damage": "+4"
   },
   {
     "id": 221,
@@ -2335,7 +2554,8 @@ var initialBoard = [
 	  220,
 	  245,
 	  250
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 222,
@@ -2345,7 +2565,8 @@ var initialBoard = [
     "connectedNodes": [
 	  65,
 	  66
-    ]
+    ],
+	"Other": "Infinity Skill Upgrade:\nShield +(1.0/Maximum HP)(3s)\nIncreased Number of Strikes\nCooldown: 15s"
   },
   {
     "id": 223,
@@ -2356,7 +2577,8 @@ var initialBoard = [
 	  166,
 	  224,
 	  229
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 224,
@@ -2367,7 +2589,8 @@ var initialBoard = [
 	  223,
 	  225,
 	  226
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 225,
@@ -2377,7 +2600,8 @@ var initialBoard = [
     "connectedNodes": [
 	  224,
 	  226
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 226,
@@ -2388,7 +2612,8 @@ var initialBoard = [
 	  224,
 	  225,
 	  227
-    ]
+    ],
+	"Stamina %": "+1"
   },
   {
     "id": 227,
@@ -2398,7 +2623,8 @@ var initialBoard = [
     "connectedNodes": [
 	  226,
 	  232
-    ]
+    ],
+	"Other": "Awakening Stone Slot\n(Lower Right)"
   },
   {
     "id": 228,
@@ -2407,7 +2633,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  56
-    ]
+    ],
+	"All Skills (Excluding Summons)\nTarget": "+1"
   },
   {
     "id": 229,
@@ -2417,7 +2644,8 @@ var initialBoard = [
     "connectedNodes": [
 	  223,
 	  230
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 230,
@@ -2428,7 +2656,8 @@ var initialBoard = [
 	  229,
 	  231,
 	  232
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 231,
@@ -2438,7 +2667,8 @@ var initialBoard = [
     "connectedNodes": [
 	  230
     ],
-	"notes": "this is slot 183 in-game"
+	"notes": "this is slot 183 in-game",
+	"Other": "Inflict additional damage 10\ntimes at a 5% chance upon\nhitting enemies with 30% HP\nor lower"
   },
   {
     "id": 232,
@@ -2450,7 +2680,8 @@ var initialBoard = [
 	  227,
 	  230,
 	  234
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 233,
@@ -2460,7 +2691,8 @@ var initialBoard = [
     "connectedNodes": [
 	  101,
 	  103
-    ]
+    ],
+	"Other": "Awakened Skill (Upper Left)"
   },
   {
     "id": 234,
@@ -2470,7 +2702,8 @@ var initialBoard = [
     "connectedNodes": [
 	  232,
 	  235
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 235,
@@ -2482,7 +2715,8 @@ var initialBoard = [
 	  236,
 	  239,
 	  243
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 236,
@@ -2492,7 +2726,8 @@ var initialBoard = [
     "connectedNodes": [
 	  235,
 	  243
-    ]
+    ],
+	"HP": "+2000"
   },
   {
     "id": 237,
@@ -2502,7 +2737,8 @@ var initialBoard = [
     "connectedNodes": [
 	  105,
 	  106
-    ]
+    ],
+	"Other": "Legend I Skill 4 (L4) Upgrade"
   },
   {
     "id": 238,
@@ -2511,7 +2747,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  104
-    ]
+    ],
+	"Other": "Class Special Skill Upgrade:\nDuration +100%\nCooldown +50%"
   },
   {
     "id": 239,
@@ -2521,7 +2758,8 @@ var initialBoard = [
     "connectedNodes": [
 	  235,
 	  243
-    ]
+    ],
+	"HP": "+2000"
   },
   {
     "id": 240,
@@ -2531,7 +2769,8 @@ var initialBoard = [
     "connectedNodes": [
 	  126,
 	  241
-    ]
+    ],
+	"Legend II Skill 7 (LL7) Target": "+1"
   },
   {
     "id": 241,
@@ -2541,7 +2780,8 @@ var initialBoard = [
     "connectedNodes": [
 	  240,
 	  242
-    ]
+    ],
+	"Legend II Skill 7 (LL7) Target": "+1"
   },
   {
     "id": 242,
@@ -2550,7 +2790,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  241
-    ]
+    ],
+	"Other": "Legend II Skill 7 (LL7) Upgrade:\nStun (2s)"
   },
   {
     "id": 243,
@@ -2562,7 +2803,8 @@ var initialBoard = [
 	  236,
 	  239,
 	  244
-    ]
+    ],
+	"HP": "+2000"
   },
   {
     "id": 244,
@@ -2573,7 +2815,8 @@ var initialBoard = [
 	  243,
 	  245,
 	  253
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 245,
@@ -2584,7 +2827,8 @@ var initialBoard = [
 	  244,
 	  221,
 	  248
-    ]
+    ],
+	"Stamina": "+500"
   },
   {
     "id": 246,
@@ -2594,7 +2838,8 @@ var initialBoard = [
     "connectedNodes": [
 	  148,
 	  149
-    ]
+    ],
+	"Other": "Legend II Skill 4 (LL4) Upgrade"
   },
   {
     "id": 247,
@@ -2603,7 +2848,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  147
-    ]
+    ],
+	"Other": "Survival Instinct Upgrade:\nDuration +100%\nCooldown +50%"
   },
   {
     "id": 248,
@@ -2613,7 +2859,8 @@ var initialBoard = [
     "connectedNodes": [
 	  245,
 	  249
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 249,
@@ -2623,7 +2870,8 @@ var initialBoard = [
     "connectedNodes": [
 	  248,
 	  275
-    ]
+    ],
+	"HP": "+1000"
   },
   {
     "id": 250,
@@ -2634,7 +2882,8 @@ var initialBoard = [
 	  221,
 	  251,
 	  271
-    ]
+    ],
+	"Dual Maximum Damage": "+12"
   },
   {
     "id": 251,
@@ -2644,7 +2893,8 @@ var initialBoard = [
     "connectedNodes": [
 	  250,
 	  271
-    ]
+    ],
+	"Dual Maximum Damage": "+12"
   },
   {
     "id": 252,
@@ -2654,7 +2904,8 @@ var initialBoard = [
     "connectedNodes": [
 	  150,
 	  152
-    ]
+    ],
+	"Other": "Awakened Skill (Upper Right)"
   },
   {
     "id": 253,
@@ -2665,7 +2916,8 @@ var initialBoard = [
 	  244,
 	  254,
 	  255
-    ]
+    ],
+	"Dual Damage": "+10"
   },
   {
     "id": 254,
@@ -2675,7 +2927,8 @@ var initialBoard = [
     "connectedNodes": [
 	  253,
 	  256
-    ]
+    ],
+	"Other": "Class Specific Skill\n(Lower Right) Bonus (Top)"
   },
   {
     "id": 255,
@@ -2685,7 +2938,8 @@ var initialBoard = [
     "connectedNodes": [
 	  253,
 	  256
-    ]
+    ],
+	"Other": "Class Specific Skill\n(Lower Right) Bonus (Bottom)"
   },
   {
     "id": 256,
@@ -2697,7 +2951,8 @@ var initialBoard = [
 	  255,
 	  281,
 	  282
-    ]
+    ],
+	"Other": "Class Specific Skill\n(Lower Right) Bonus (Middle)"
   },
   {
     "id": 260,
@@ -2707,7 +2962,8 @@ var initialBoard = [
     "connectedNodes": [
 	  190,
 	  191
-    ]
+    ],
+	"Other": "Awakened Skill (Middle Right)"
   },
   {
     "id": 263,
@@ -2716,7 +2972,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  192
-    ]
+    ],
+	"Other": "Special Point Recovery +250\nat 1% chance"
   },
   {
     "id": 271,
@@ -2726,7 +2983,9 @@ var initialBoard = [
     "connectedNodes": [
 	  250,
 	  251
-    ]
+    ],
+	"Dual Accuracy": "-10",
+	"Boss Damage Amplification %": "\n+2.5"
   },
   {
     "id": 275,
@@ -2735,7 +2994,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  249
-    ]
+    ],
+	"Other": "When damage was given while\nyour HP is 90% or higher:\nDual Minimum Damage +1%\nDual Maximum Damage +1%\nDual Critical Damage +1%\n10s Duration"
   },
   {
     "id": 281,
@@ -2744,7 +3004,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  256
-    ]
+    ],
+	"Other": "Awakened Skill (Lower Right)\nTop"
   },
   {
     "id": 282,
@@ -2753,6 +3014,7 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  256
-    ]
+    ],
+	"Other": "Awakened Skill (Lower Right)\nBottom"
   }
 ];

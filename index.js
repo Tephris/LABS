@@ -1,7 +1,14 @@
 window.onload = init;
 var board = Object.assign({}, ...initialBoard.map((node) => ({[node.id]: node})));
 var nodeSelectionEnabled = false;
-var possibleStats = ["Basic Stats", "Dual Accuracy", "Dual Critical Damage", "Dual Evasion", "HP", "Movement Speed", "Stamina"];
+var possibleStats = ["All Skills (Excluding Summons)\nTarget", "Attack / Elemental Intensity", "Attack / Elemental Intensity %",
+		"Basic Stats", "Basic Stats %", "Confusion Resistance %", "Cooldown Reduction", "Damage Mitigation %", "Defense",
+		"Dual Accuracy", "Dual Back Attack Damage", "Dual Critical Damage", "Dual Critical Damage %", "Dual Critical Rate",
+		"Dual Damage", "Dual Defense Penetration", "Dual Evasion", "Dual Maximum Damage", "Dual Maximum Damage %", "Dual Minimum Damage",
+		"Dual Minimum Damage %", "Dual Static Damage", "Dual Static Damage %", "Elemental Resistance", "HP", "HP %", "Infinity Skill Level",
+		"Legend II Skill 7 (LL7) Target", "Luck", "Luck %", "Movement Speed", "Normal Added Damage", "Normal Added Damage %",
+		"Normal Damage Amplification %", "Boss Added Damage", "Boss Added Damage %", "Boss Damage Amplification %", "Other", "Special Points",
+		"Stamina", "Stamina %", "Strength / Magic", "Strength / Magic %", "Stun Resistance %"];
 
 function init() {
 	let canvas = document.getElementById("board");
@@ -12,7 +19,6 @@ function init() {
 	canvas.addEventListener('click', function(e) {
 		let position = getCursorPosition(canvas, e, ctx);
 		let nodeId = detectClickedNode(board, position.x, position.y);
-		console.log("Node: " + nodeId);
 		leftClick(nodeId, ctx);
 		if (isResetButton(position.x, position.y)) {
 			resetBoard(true);
@@ -375,14 +381,20 @@ function getNodeStatsDisplay(nodeId) {
 	let stats = "";
 	for (let statName of possibleStats) {
 		if (Object.hasOwn(node, statName)) {
-			stats += statName + " " + node[statName] + "\n";
+			if (statName == "Other") {
+				stats += node[statName] + "\n";
+			} else if(statName.includes("%")) {
+				stats += statName.replace("%", "") + node[statName] + "%\n";
+			} else {				
+				stats += statName + " " + node[statName] + "\n";
+			}
 		}
 	}
 	return stats;
 }
 
 function drawTextbox(x, y, text, ctx) {
-	const boxWidth = 200;
+	const boxWidth = 225;
 	const lineHeight = 15;
 	
 	if (x > 920) {
