@@ -1,6 +1,7 @@
 window.onload = init;
-var board = Object.assign({}, ...initialBoard.map((node) => ({[node.id]: {"id": node.id, "x": node.x, "y": node.y, "active": node.active, "connectedNodes": node.connectedNodes}})));
+var board = Object.assign({}, ...initialBoard.map((node) => ({[node.id]: node})));
 var nodeSelectionEnabled = false;
+var possibleStats = ["Basic Stats", "Dual Accuracy", "Dual Critical Damage", "Dual Evasion", "HP", "Movement Speed", "Stamina"];
 
 function init() {
 	let canvas = document.getElementById("board");
@@ -47,6 +48,18 @@ function init() {
 		}
 	});
 	
+	canvas.addEventListener('mousemove', function(e) {
+		let position = getCursorPosition(canvas, e, ctx);
+		let nodeId = detectClickedNode(board, position.x, position.y);
+		if (nodeId > 0) {
+			let stats = getNodeStatsDisplay(nodeId);
+			let node = board[nodeId];
+			drawTextbox(node.x, node.y, stats, ctx);
+		} else {
+			drawAll(ctx);
+		}
+	});
+	
 	drawAll(ctx);
 }
 
@@ -82,7 +95,6 @@ function getCursorPosition(canvas, event, ctx) {
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-	console.log("x: " + x + " y: " + y);
 	return { x, y };	
 }
 
@@ -356,4 +368,40 @@ function permute(array, permutation, result) {
 	}
 	
 	return result;
+}
+
+function getNodeStatsDisplay(nodeId) {
+	let node = board[nodeId];
+	let stats = "";
+	for (let statName of possibleStats) {
+		if (Object.hasOwn(node, statName)) {
+			stats += statName + " " + node[statName] + "\n";
+		}
+	}
+	return stats;
+}
+
+function drawTextbox(x, y, text, ctx) {
+	const boxWidth = 200;
+	const lineHeight = 15;
+	
+	if (x > 920) {
+		x -= boxWidth;
+	}
+	
+	let lines = text.split('\n');
+	ctx.beginPath();
+	ctx.rect(x, y, boxWidth, lineHeight * lines.length);
+	ctx.fillStyle = "white";
+	ctx.strokeStyle = "black"
+	ctx.lineWidth = 2;
+	ctx.fill();
+	ctx.stroke();
+	
+	ctx.fillStyle = "black";
+	ctx.font = '14px sans-serif';
+	for (let line of lines) {
+		ctx.fillText(line, x + 15, y + 20);
+		y += lineHeight;
+	}
 }
