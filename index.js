@@ -14,6 +14,7 @@ function init() {
 	let canvas = document.getElementById("board");
 	let ctx = canvas.getContext("2d");
 	refreshStatSummary(getStatSummary())
+	buildChecklist();
 	canvas.width = 1841;
 	canvas.height = 1001;
 	canvas.addEventListener('click', function(e) {
@@ -66,6 +67,11 @@ function init() {
 		} else {
 			drawAll(ctx);
 		}
+	});
+	
+	$("input[type=checkbox]").change(function() {
+		highlightNodes();
+		drawAll(ctx);
 	});
 	
 	drawAll(ctx);
@@ -207,6 +213,14 @@ function renderNodes(nodes, ctx) {
 			ctx.arc(node.x, node.y, 15, 0, 2 * Math.PI);
 			ctx.lineWidth = 4;
 			ctx.strokeStyle = "yellow";
+			ctx.stroke();
+		}
+		
+		if (node.highlight) {
+			ctx.beginPath();
+			ctx.arc(node.x, node.y, 18, 0, 2 * Math.PI);
+			ctx.lineWidth = 4;
+			ctx.strokeStyle = "#c585f7";
 			ctx.stroke();
 		}
 	}
@@ -496,4 +510,23 @@ function parseStatSummaryDisplay(stat, statSummary) {
 	}
 	
 	return stat + " " + sign + statSummary[stat];
+}
+
+function buildChecklist() {
+	let checklist = $("#checklist");
+	for (let stat of possibleStats) {
+		checklist.append("<li>"
+			+ "<input class='" + stat +"' type='checkbox' value='" + stat + "' id='" + stat + "'/>"
+			+ stat.replace("\n", " ")
+			+ "</li>"
+		);
+	}
+}
+
+function highlightNodes() {
+	let checkedStats = $("#checklist input:checked");
+	Object.values(board).forEach(node => node.highlight = false);
+	checkedStats.each(function() {
+		Object.values(board).filter(node => Object.hasOwn(node, $(this).attr("value"))).forEach(node => node.highlight = true);
+	});
 }

@@ -5,11 +5,19 @@
 		<script type="text/javascript" src="nodes.json"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script type="text/javascript" src="index.js"></script>
+		<link rel="stylesheet" href="index.css">
 	</head>
 	<canvas id="board"></canvas>
 	<body>
-		<h2>Stat Summary</h2>
-		<ul id="summary">
-		</ul>
+		<div id="container">		
+			<div id="stat-summary">
+				<h2>Stat Summary</h2>
+				<ul id="summary"></ul>
+			</div>
+			<div id="filter">
+				<h2>Highlight Nodes With These Stats</h2>
+				<ul id="checklist"></ul>
+			</div>
+		</div>
 	</body>
 </html>

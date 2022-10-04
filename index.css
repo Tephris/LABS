@@ -1,0 +1,19 @@
+#summary, #checklist, h2 {
+	font-family: sans-serif;
+}
+
+#stat-summary {
+	width: 900px
+}
+
+#container {
+	display: flex;
+}
+
+#filter {
+	flex-grow: 1;
+}
+
+#checklist li {
+	list-style-type: none;
+}
