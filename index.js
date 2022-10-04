@@ -13,7 +13,7 @@ var possibleStats = ["All Skills (Excluding Summons)\nTarget", "Attack / Element
 function init() {
 	let canvas = document.getElementById("board");
 	let ctx = canvas.getContext("2d");
-	
+	refreshStatSummary(getStatSummary())
 	canvas.width = 1841;
 	canvas.height = 1001;
 	canvas.addEventListener('click', function(e) {
@@ -22,6 +22,7 @@ function init() {
 		leftClick(nodeId, ctx);
 		if (isResetButton(position.x, position.y)) {
 			resetBoard(true);
+			refreshStatSummary(getStatSummary())
 			drawAll(ctx);
 		}
 		
@@ -30,8 +31,9 @@ function init() {
 			drawAll(ctx);
 		}
 		
-		if (isOptimizeButton(position.x, position.y)) {
+		if (isGenerateButton(position.x, position.y)) {
 			generateOptimalTree();
+			refreshStatSummary(getStatSummary())
 			drawAll(ctx);
 		}
 	});
@@ -90,7 +92,7 @@ function drawAll(ctx) {
 		ctx.fillStyle = "white";
 		ctx.font = '14px sans-serif';
 		ctx.fillText("Reset", 85, 981);
-		ctx.fillText("Optimize", 464, 981);
+		ctx.fillText("Generate", 463, 981);
 		
 		ctx.fillStyle = nodeSelectionEnabled ? "yellow" : "white";
 		ctx.fillText("Select Nodes", 255, 981);
@@ -104,26 +106,24 @@ function getCursorPosition(canvas, event, ctx) {
 	return { x, y };	
 }
 
-function isBelowPrioritizationLimit() {
-	// Limit optimal tree generation to use a max of 6 prioritized nodes due to computation time
+function isBelowPermutationLimit() {
+	// Limit optimal tree generation using permutations to use a max of 6 prioritized nodes due to computation time
 	let numberOfPrioritizeNodes = Object.values(board).filter(node => node.prioritize).length;
 	return numberOfPrioritizeNodes < 6;
 }
 
-function canTogglePriority(nodeId) {
-	return (isBelowPrioritizationLimit() || board[nodeId].prioritize);
-}
-
 function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
-		if (nodeSelectionEnabled && validateAwakeningSkillPrioritization(nodeId) && canTogglePriority(nodeId)) {
+		if (nodeSelectionEnabled && validateAwakeningSkillPrioritization(nodeId)) {
 			board[nodeId].prioritize = !board[nodeId].prioritize;
 		} else {
 			if (board[nodeId].active) {
 				deactivateAllDependentNodes(board[nodeId]);
+				refreshStatSummary(getStatSummary());
 			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkillActivation(nodeId)) {	
 				board[nodeId].active = true;
-			}			
+				refreshStatSummary(getStatSummary());
+			}
 		}
 			
 		drawAll(ctx);
@@ -131,7 +131,7 @@ function leftClick(nodeId, ctx) {
 }
 
 function middleClick(nodeId, ctx) {
-	if (nodeId > 1 && validateAwakeningSkillPrioritization(nodeId) && canTogglePriority(nodeId)) {
+	if (nodeId > 1 && validateAwakeningSkillPrioritization(nodeId)) {
 		board[nodeId].prioritize = !board[nodeId].prioritize;
 		drawAll(ctx);
 	}
@@ -140,6 +140,7 @@ function middleClick(nodeId, ctx) {
 function rightClick(nodeId, ctx) {
 	if (nodeId > 1) {
 		activateShortestPath(board[nodeId]);
+		refreshStatSummary(getStatSummary());
 		drawAll(ctx);
 	}
 }
@@ -176,7 +177,7 @@ function isNodeSelectionButton(x, y) {
 	return x >= 205 && x <= 392 && y >= 962 && y <= 992;
 }
 
-function isOptimizeButton(x, y) {
+function isGenerateButton(x, y) {
 	return x >= 399 && x <= 585 && y >= 962 && y <= 992;
 }
 
@@ -338,18 +339,34 @@ function generateOptimalTree() {
 
 	let currentMin = Object.keys(board).length;
 	let currentBoard = structuredClone(board);
-	let permutations = getPermutations(targetNodes);
 	
-	for (let permutation of permutations) {
-		resetBoard(false);
-		for (let nodeId of permutation) {
-			activateShortestPath(board[nodeId]);
+	if (isBelowPermutationLimit()) {
+		let permutations = getPermutations(targetNodes);
+		for (let permutation of permutations) {
+			resetBoard(false);
+			for (let nodeId of permutation) {
+				activateShortestPath(board[nodeId]);
+			}
+			
+			let pointCount = Object.values(board).filter(node => node.active).length;
+			if (pointCount < currentMin) {
+				currentMin = pointCount;
+				currentBoard = structuredClone(board);
+			}
 		}
-		
-		let pointCount = Object.values(board).filter(node => node.active).length;
-		if (pointCount < currentMin) {
-			currentMin = pointCount;
-			currentBoard = structuredClone(board);
+	} else {
+		for (let i = 0; i < 50; i++) {
+			shuffleArray(targetNodes);
+			resetBoard(false);
+			for (let nodeId of targetNodes) {
+				activateShortestPath(board[nodeId]);
+			}
+			
+			let pointCount = Object.values(board).filter(node => node.active).length;
+			if (pointCount < currentMin) {
+				currentMin = pointCount;
+				currentBoard = structuredClone(board);
+			}
 		}
 	}
 	
@@ -416,4 +433,67 @@ function drawTextbox(x, y, text, ctx) {
 		ctx.fillText(line, x + 15, y + 20);
 		y += lineHeight;
 	}
+}
+
+function shuffleArray(array) {
+	let currentIndex = array.length;
+
+	while (currentIndex != 0) {
+		let randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
+		[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+	}
+
+	return array;
+}
+
+function getStatSummary() {
+	let activeNodes = Object.values(board).filter(node => node.active);
+	let stats = {};
+	
+	for (let node of activeNodes) {
+		for (let stat of possibleStats) {
+			if (stat != "Other" && Object.hasOwn(node, stat)) {
+				if (stat in stats) {
+					stats[stat] += parseFloat(node[stat]);
+				} else {
+					stats[stat] = parseFloat(node[stat]);
+				}
+			} else if (stat == "Other" && Object.hasOwn(node, stat)) {
+				stats[node[stat] + stat] = node[stat];
+			}
+		}
+	}
+	
+	return stats;
+}
+
+function refreshStatSummary(statSummary) {
+	let summaryList = $("#summary");
+	summaryList.empty();
+
+	Object.keys(statSummary).sort().forEach(stat => {
+		if (statSummary[stat] != 0) {
+			summaryList.append("<li>" + parseStatSummaryDisplay(stat, statSummary) + "</li>");
+		}
+	});
+}
+
+function parseStatSummaryDisplay(stat, statSummary) {
+	let sign = statSummary[stat] > 0 ? "+" : "";
+	
+	if (stat.includes("Other")) {
+		if (statSummary[stat].includes(":")) {
+			let description = statSummary[stat].split(":");
+			return description[0].replace("\n", " ") + ": " + description[1].trim().replaceAll("\n", ", ");
+		} else {
+			return statSummary[stat].replace("\n", " ");
+		}
+	} else if (stat.includes("\n")) {
+		return stat.replace("\n", " ") + " " + sign + statSummary[stat];
+	} else if (stat.includes("%")) {
+		return stat.replace("%", "") + sign + statSummary[stat] + "%";
+	}
+	
+	return stat + " " + sign + statSummary[stat];
 }
