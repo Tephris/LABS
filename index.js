@@ -9,6 +9,14 @@ var possibleStats = ["All Skills (Excluding Summons)\nTarget", "Attack / Element
 		"Legend II Skill 7 (LL7) Target", "Luck", "Luck %", "Movement Speed", "Normal Added Damage", "Normal Added Damage %",
 		"Normal Damage Amplification %", "Boss Added Damage", "Boss Added Damage %", "Boss Damage Amplification %", "Other", "Special Points",
 		"Stamina", "Stamina %", "Strength / Magic", "Strength / Magic %", "Stun Resistance %"];
+var helpText = "Left Click: Activate/Deactivate node\n"
+				+ "Right Click: Activate nodes along shortest path to target\n"
+				+ "Middle Click: Select Nodes shortcut\n"
+				+ "Select Nodes: Pick nodes to include in generation\n"
+				+ "Generate: Generates a near-optimal tree based on\n    selected nodes. When more nodes are selected, there is\n"
+				+ "    a greater chance for a non-optimal tree to be generated.\n"
+				+ "    Try to generate a few times or manually adjust the tree\n"
+				+ "    after generation.\n";
 
 function init() {
 	let canvas = document.getElementById("board");
@@ -64,9 +72,13 @@ function init() {
 			let stats = getNodeStatsDisplay(nodeId);
 			let node = board[nodeId];
 			drawTextbox(node.x, node.y, stats, ctx);
+		} else if (isHelpText(position.x, position.y)) {
+			drawTextbox(1635, 80, helpText, ctx, 400);
 		} else {
 			drawAll(ctx);
 		}
+		
+		
 	});
 	
 	$("input[type=checkbox]").change(function() {
@@ -94,6 +106,8 @@ function drawAll(ctx) {
 		ctx.fillStyle = "yellow";
 		ctx.font = '12px sans-serif';
 		ctx.fillText((pointsUsed - 1) + 'p', 1780, 97);
+		ctx.font = '16px sans-serif';
+		ctx.fillText("HELP", 1635, 85);
 		
 		ctx.fillStyle = "white";
 		ctx.font = '14px sans-serif';
@@ -185,6 +199,10 @@ function isNodeSelectionButton(x, y) {
 
 function isGenerateButton(x, y) {
 	return x >= 399 && x <= 585 && y >= 962 && y <= 992;
+}
+
+function isHelpText(x, y) {
+	return x >= 1635 && x <= 1685 && y >= 65 && y <= 90;
 }
 
 function resetBoard(deprioritize) {
@@ -424,8 +442,7 @@ function getNodeStatsDisplay(nodeId) {
 	return stats;
 }
 
-function drawTextbox(x, y, text, ctx) {
-	const boxWidth = 225;
+function drawTextbox(x, y, text, ctx, boxWidth = 225) {
 	const lineHeight = 15;
 	
 	if (x > 920) {
