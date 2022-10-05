@@ -21,6 +21,7 @@ var helpText = "Left Click: Activate/Deactivate node\n"
 function init() {
 	let canvas = document.getElementById("board");
 	let ctx = canvas.getContext("2d");
+	activateNodesFromURL();
 	refreshStatSummary(getStatSummary())
 	buildChecklist();
 	canvas.width = 1841;
@@ -45,6 +46,8 @@ function init() {
 			refreshStatSummary(getStatSummary())
 			drawAll(ctx);
 		}
+		
+		updateURL()
 	});
 	
 	canvas.addEventListener('contextmenu', function(e) {
@@ -53,6 +56,8 @@ function init() {
 		let position = getCursorPosition(canvas, e, ctx);
 		let nodeId = detectClickedNode(board, position.x, position.y);
 		rightClick(nodeId, ctx);
+		
+		updateURL()
 	});
 	
 	canvas.addEventListener('mousedown', function(e) {
@@ -536,4 +541,30 @@ function highlightNodes() {
 	checkedStats.each(function() {
 		Object.values(board).filter(node => Object.hasOwn(node, $(this).attr("value"))).forEach(node => node.highlight = true);
 	});
+}
+
+function activateNodesFromURL() {
+	let url = window.location.href;
+	if (url.includes("?")) {
+		let nodeIds = url.slice(window.location.href.indexOf("?") + 1).split("&");
+		for (let nodeId of nodeIds) {
+			if (nodeId in board) {
+				board[nodeId].active = true;
+			}
+		}
+		
+		let visited = [];
+		dfs(board[1], visited);
+		Object.keys(board).forEach(id => {
+			if (!visited.includes(parseInt(id))) {
+				board[id].active = false;
+			}
+		});
+	}
+}
+
+function updateURL() {
+	let url = window.location.href.split("?")[0];
+	let activeNodes = Object.values(board).filter(node => node.active).map(node => node.id);
+	window.history.replaceState(null, null, "?" + activeNodes.join("&"));
 }
