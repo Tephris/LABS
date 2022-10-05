@@ -77,8 +77,6 @@ function init() {
 		} else {
 			drawAll(ctx);
 		}
-		
-		
 	});
 	
 	$("input[type=checkbox]").change(function() {
@@ -134,13 +132,13 @@ function isBelowPermutationLimit() {
 
 function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
-		if (nodeSelectionEnabled && validateAwakeningSkillPrioritization(nodeId)) {
+		if (nodeSelectionEnabled && validateAwakeningSkill(nodeId, true)) {
 			board[nodeId].prioritize = !board[nodeId].prioritize;
-		} else {
+		} else if (!nodeSelectionEnabled) {
 			if (board[nodeId].active) {
 				deactivateAllDependentNodes(board[nodeId]);
 				refreshStatSummary(getStatSummary());
-			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkillActivation(nodeId)) {	
+			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkill(nodeId, false)) {	
 				board[nodeId].active = true;
 				refreshStatSummary(getStatSummary());
 			}
@@ -151,7 +149,7 @@ function leftClick(nodeId, ctx) {
 }
 
 function middleClick(nodeId, ctx) {
-	if (nodeId > 1 && validateAwakeningSkillPrioritization(nodeId)) {
+	if (nodeId > 1 && validateAwakeningSkill(nodeId, true)) {
 		board[nodeId].prioritize = !board[nodeId].prioritize;
 		drawAll(ctx);
 	}
@@ -165,28 +163,18 @@ function rightClick(nodeId, ctx) {
 	}
 }
 
-function validateAwakeningSkillActivation(nodeId) {
+function validateAwakeningSkill(nodeId, isPrioritization) {
 	const leftTopSkillId = "205";
 	const leftBottomSkillId = "206";
 	const rightTopSkillId = "281";
 	const rightBottomSkillId = "282";
 	
-	return !((nodeId == leftTopSkillId && board[leftBottomSkillId].active)
-		|| (nodeId == leftBottomSkillId && board[leftTopSkillId].active)
-		|| (nodeId == rightTopSkillId && board[rightBottomSkillId].active)
-		|| (nodeId == rightBottomSkillId && board[rightTopSkillId].active));
-}
-
-function validateAwakeningSkillPrioritization(nodeId) {
-	const leftTopSkillId = "205";
-	const leftBottomSkillId = "206";
-	const rightTopSkillId = "281";
-	const rightBottomSkillId = "282";
+	let property = isPrioritization ? "prioritize" : "active";
 	
-	return !((nodeId == leftTopSkillId && board[leftBottomSkillId].prioritize)
-		|| (nodeId == leftBottomSkillId && board[leftTopSkillId].prioritize)
-		|| (nodeId == rightTopSkillId && board[rightBottomSkillId].prioritize)
-		|| (nodeId == rightBottomSkillId && board[rightTopSkillId].prioritize));
+	return !((nodeId == leftTopSkillId && board[leftBottomSkillId][property])
+		|| (nodeId == leftBottomSkillId && board[leftTopSkillId][property])
+		|| (nodeId == rightTopSkillId && board[rightBottomSkillId][property])
+		|| (nodeId == rightBottomSkillId && board[rightTopSkillId][property]));
 }
 
 function isResetButton(x, y) {
@@ -323,7 +311,7 @@ function activateShortestPath(currentNode) {
 	
 	let path = getPath(currentBest.steps, currentBest.stopNode);
 	for (const nodeId of path) {
-		if (validateAwakeningSkillActivation(nodeId)) {
+		if (validateAwakeningSkill(nodeId, false)) {
 			board[nodeId].active = true;
 		}
 	}
@@ -439,6 +427,7 @@ function getNodeStatsDisplay(nodeId) {
 			}
 		}
 	}
+	
 	return stats;
 }
 
@@ -531,7 +520,8 @@ function parseStatSummaryDisplay(stat, statSummary) {
 
 function buildChecklist() {
 	let checklist = $("#checklist");
-	for (let stat of possibleStats) {
+	let sortedStats = possibleStats.slice().sort();
+	for (let stat of sortedStats) {
 		checklist.append("<li>"
 			+ "<input class='" + stat +"' type='checkbox' value='" + stat + "' id='" + stat + "'/>"
 			+ stat.replace("\n", " ")
