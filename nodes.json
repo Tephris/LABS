@@ -227,7 +227,7 @@ var initialBoard = [
 	  205,
 	  206
     ],
-	"Other": "Class Specific Skill (Lower Left)\nBonus"
+	"Other": "Class Specific Skill Bonus\n(Lower Left)"
   },
   {
     "id": 20,
@@ -760,7 +760,12 @@ var initialBoard = [
 	  64,
 	  222
     ],
-	"Infinity Skill Level": "+1"
+	"Main": {
+		"Infinity Skill Level": "+1"
+	},
+	"Sub": {
+		"Dual Minimum Damage": "+16"
+	}
   },
   {
     "id": 66,
@@ -771,7 +776,12 @@ var initialBoard = [
 	  64,
 	  222
     ],
-	"Infinity Skill Level": "+1"
+	"Main": {
+		"Infinity Skill Level": "+1"
+	},
+	"Sub": {
+		"Dual Maximum Damage": "+16"
+	}
   },
   {
     "id": 67,
@@ -1202,7 +1212,7 @@ var initialBoard = [
 	  102,
 	  233
     ],
-	"Other": "Class Specific Skill (Upper Left)\nBonus"
+	"Other": "Class Specific Skill Bonus\n(Upper Left)"
   },
   {
     "id": 104,
@@ -1768,7 +1778,7 @@ var initialBoard = [
 	  151,
 	  252
     ],
-	"Other": "Class Specific Skill (Upper Right)\nBonus"
+	"Other": "Class Specific Skill Bonus\n(Upper Right)"
   },
   {
     "id": 153,
@@ -2214,7 +2224,7 @@ var initialBoard = [
 	  189,
 	  260
     ],
-	"Other": "Class Specific Skill\n(Middle Right) Bonus (Top)"
+	"Other": "Class Specific Skill Bonus\n(Middle Right - Top)"
   },
   {
     "id": 191,
@@ -2225,7 +2235,7 @@ var initialBoard = [
 	  189,
 	  260
     ],
-	"Other": "Class Specific Skill\n(Middle Right) Bonus (Bottom)"
+	"Other": "Class Specific Skill Bonus\n(Middle Right - Bottom)"
   },
   {
     "id": 192,
@@ -2376,7 +2386,7 @@ var initialBoard = [
     "connectedNodes": [
 	  19
     ],
-	"Other": "Awakened Skill (Lower Left)\nTop"
+	"Other": "Awakened Skill\n(Lower Left - Top)"
   },
   {
     "id": 206,
@@ -2386,7 +2396,7 @@ var initialBoard = [
     "connectedNodes": [
 	  19
     ],
-	"Other": "Awakened Skill (Lower Left)\nBottom"
+	"Other": "Awakened Skill\n(Lower Left - Bottom)"
   },
   {
     "id": 207,
@@ -2566,7 +2576,13 @@ var initialBoard = [
 	  65,
 	  66
     ],
-	"Other": "Infinity Skill Upgrade:\nShield +(1.0/Maximum HP)(3s)\nIncreased Number of Strikes\nCooldown: 15s"
+	"Main": {
+		"Other": "Infinity Skill Upgrade:\nShield +(1.0/Maximum HP)(3s)\nIncreased Number of Strikes\n15s cooldown"
+	},
+	"Sub": {
+		"Dual Minimum Damage %": "+1",
+		"Dual Maximum Damage %": "+1"
+	}
   },
   {
     "id": 223,
@@ -2928,7 +2944,7 @@ var initialBoard = [
 	  253,
 	  256
     ],
-	"Other": "Class Specific Skill\n(Lower Right) Bonus (Top)"
+	"Other": "Class Specific Skill Bonus\n(Lower Right - Top)"
   },
   {
     "id": 255,
@@ -2939,7 +2955,7 @@ var initialBoard = [
 	  253,
 	  256
     ],
-	"Other": "Class Specific Skill\n(Lower Right) Bonus (Bottom)"
+	"Other": "Class Specific Skill Bonus\n(Lower Right - Bottom)"
   },
   {
     "id": 256,
@@ -2952,7 +2968,7 @@ var initialBoard = [
 	  281,
 	  282
     ],
-	"Other": "Class Specific Skill\n(Lower Right) Bonus (Middle)"
+	"Other": "Class Specific Skill Bonus\n(Lower Right - Middle)"
   },
   {
     "id": 260,
@@ -3005,7 +3021,7 @@ var initialBoard = [
     "connectedNodes": [
 	  256
     ],
-	"Other": "Awakened Skill (Lower Right)\nTop"
+	"Other": "Awakened Skill\n(Lower Right - Top)"
   },
   {
     "id": 282,
@@ -3015,6 +3031,6 @@ var initialBoard = [
     "connectedNodes": [
 	  256
     ],
-	"Other": "Awakened Skill (Lower Right)\nBottom"
+	"Other": "Awakened Skill\n(Lower Right - Bottom)"
   }
 ];

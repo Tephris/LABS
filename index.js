@@ -1,6 +1,7 @@
 window.onload = init;
 var board = Object.assign({}, ...initialBoard.map((node) => ({[node.id]: node})));
 var nodeSelectionEnabled = false;
+var isSubclassModeEnabled = false;
 var possibleStats = ["All Skills (Excluding Summons)\nTarget", "Attack / Elemental Intensity", "Attack / Elemental Intensity %",
 		"Basic Stats", "Basic Stats %", "Confusion Resistance %", "Cooldown Reduction", "Damage Mitigation %", "Defense",
 		"Dual Accuracy", "Dual Back Attack Damage", "Dual Critical Damage", "Dual Critical Damage %", "Dual Critical Rate",
@@ -11,7 +12,7 @@ var possibleStats = ["All Skills (Excluding Summons)\nTarget", "Attack / Element
 		"Stamina", "Stamina %", "Strength / Magic", "Strength / Magic %", "Stun Resistance %"];
 var helpText = "Left Click: Activate/Deactivate node\n"
 				+ "Right Click: Activate nodes along shortest path to target\n"
-				+ "Middle Click: Select Nodes shortcut\n"
+				+ "Middle Click on Nodes: Select Nodes shortcut\n"
 				+ "Select Nodes: Pick nodes to include in generation\n"
 				+ "Generate: Generates a near-optimal tree based on\n    selected nodes. When more nodes are selected, there is\n"
 				+ "    a greater chance for a non-optimal tree to be generated.\n"
@@ -32,7 +33,7 @@ function init() {
 		leftClick(nodeId, ctx);
 		if (isResetButton(position.x, position.y)) {
 			resetBoard(true);
-			refreshStatSummary(getStatSummary())
+			refreshStatSummary(getStatSummary());
 			drawAll(ctx);
 		}
 		
@@ -41,6 +42,13 @@ function init() {
 			drawAll(ctx);
 		}
 		
+		
+		if (isSubclassModeButton(position.x, position.y)) {
+			isSubclassModeEnabled= !isSubclassModeEnabled;
+			refreshStatSummary(getStatSummary());
+			highlightNodes();
+			drawAll(ctx);
+		}
 		if (isGenerateButton(position.x, position.y)) {
 			generateOptimalTree();
 			refreshStatSummary(getStatSummary())
@@ -119,6 +127,9 @@ function drawAll(ctx) {
 		
 		ctx.fillStyle = nodeSelectionEnabled ? "yellow" : "white";
 		ctx.fillText("Select Nodes", 255, 981);
+	
+		ctx.fillStyle = isSubclassModeEnabled ? "yellow" : "white";
+		ctx.fillText("Subclass Mode", 60, 27);
 	};
 }
 
@@ -188,6 +199,10 @@ function isResetButton(x, y) {
 
 function isNodeSelectionButton(x, y) {
 	return x >= 205 && x <= 392 && y >= 962 && y <= 992;
+}
+
+function isSubclassModeButton(x, y) {
+	return x >= 10 && x <= 199 && y >= 9 && y <= 39;
 }
 
 function isGenerateButton(x, y) {
@@ -419,7 +434,8 @@ function permute(array, permutation, result) {
 }
 
 function getNodeStatsDisplay(nodeId) {
-	let node = board[nodeId];
+	let node = getMainOrSubStats(board[nodeId]);
+	
 	let stats = "";
 	for (let statName of possibleStats) {
 		if (Object.hasOwn(node, statName)) {
@@ -477,6 +493,8 @@ function getStatSummary() {
 	let stats = {};
 	
 	for (let node of activeNodes) {
+		node = getMainOrSubStats(node);
+		
 		for (let stat of possibleStats) {
 			if (stat != "Other" && Object.hasOwn(node, stat)) {
 				if (stat in stats) {
@@ -539,7 +557,7 @@ function highlightNodes() {
 	let checkedStats = $("#checklist input:checked");
 	Object.values(board).forEach(node => node.highlight = false);
 	checkedStats.each(function() {
-		Object.values(board).filter(node => Object.hasOwn(node, $(this).attr("value"))).forEach(node => node.highlight = true);
+		Object.values(board).filter(node => Object.hasOwn(getMainOrSubStats(node), $(this).attr("value"))).forEach(node => node.highlight = true);
 	});
 }
 
@@ -548,6 +566,11 @@ function activateNodesFromURL() {
 	if (url.includes("?")) {
 		let nodeIds = url.slice(window.location.href.indexOf("?") + 1).split("&");
 		for (let nodeId of nodeIds) {
+			if (nodeId == "-1") {
+				isSubclassModeEnabled = true;
+				continue;
+			}
+			
 			if (nodeId in board) {
 				board[nodeId].active = true;
 			}
@@ -564,7 +587,19 @@ function activateNodesFromURL() {
 }
 
 function updateURL() {
-	let url = window.location.href.split("?")[0];
 	let activeNodes = Object.values(board).filter(node => node.active).map(node => node.id);
-	window.history.replaceState(null, null, "?" + activeNodes.join("&"));
+	let queryString = isSubclassModeEnabled ? "-1&" : "";
+	window.history.replaceState(null, null, "?" + queryString + activeNodes.join("&"));
+}
+
+function getMainOrSubStats(node) {
+	if (Object.hasOwn(node, "Main")) {
+		if (isSubclassModeEnabled) {
+			node = node["Sub"];
+		} else {
+			node = node["Main"];
+		}
+	}
+	
+	return node;
 }
