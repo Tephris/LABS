@@ -2577,7 +2577,7 @@ var initialBoard = [
 	  66
     ],
 	"Main": {
-		"Other": "Infinity Skill Upgrade:\nShield +(1.0/Maximum HP)(3s)\nIncreased Number of Strikes\n15s cooldown"
+		"Other": "Infinity Skill Upgrade:\nShield +(150% HP)(1.5s)\nIncreased Number of Strikes\n15s cooldown"
 	},
 	"Sub": {
 		"Dual Minimum Damage %": "+1",
@@ -2764,7 +2764,7 @@ var initialBoard = [
     "connectedNodes": [
 	  104
     ],
-	"Other": "Class Special Skill Upgrade:\nDuration +100%\nCooldown +50%"
+	"Other": "Class Special Skill Upgrade:\nDuration +100%"
   },
   {
     "id": 239,
@@ -2865,7 +2865,7 @@ var initialBoard = [
     "connectedNodes": [
 	  147
     ],
-	"Other": "Survival Instinct Upgrade:\nDuration +100%\nCooldown +50%"
+	"Other": "Survival Instinct Upgrade:\nDuration +100%"
   },
   {
     "id": 248,
