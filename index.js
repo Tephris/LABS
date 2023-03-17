@@ -14,10 +14,10 @@ var helpText = "Left Click: Activate/Deactivate node\n"
 				+ "Right Click: Activate nodes along shortest path to target\n"
 				+ "Middle Click on Nodes: Select Nodes shortcut\n"
 				+ "Select Nodes: Pick nodes to include in generation\n"
-				+ "Generate: Generates a near-optimal tree based on\n    selected nodes. When more nodes are selected, there is\n"
-				+ "    a greater chance for a non-optimal tree to be generated.\n"
-				+ "    Try to generate a few times or manually adjust the tree\n"
-				+ "    after generation.\n";
+				+ "Generate: Generates a near-optimal tree based on\n	 selected nodes. When more nodes are selected, there is\n"
+				+ "	   a greater chance for a non-optimal tree to be generated.\n"
+				+ "	   Try to generate a few times or manually adjust the tree\n"
+				+ "	   after generation.\n";
 
 function init() {
 	let canvas = document.getElementById("board");
@@ -134,9 +134,9 @@ function drawAll(ctx) {
 }
 
 function getCursorPosition(canvas, event, ctx) {
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+	const rect = canvas.getBoundingClientRect();
+	const x = event.clientX - rect.left;
+	const y = event.clientY - rect.top;
 	return { x, y };	
 }
 

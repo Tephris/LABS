@@ -2764,7 +2764,7 @@ var initialBoard = [
     "connectedNodes": [
 	  104
     ],
-	"Other": "Class Special Skill Upgrade:\nDuration +100%"
+	"Other": "Class Special Skill Upgrade:\nDuration +100%\nCooldown +30%"
   },
   {
     "id": 239,
@@ -2865,7 +2865,7 @@ var initialBoard = [
     "connectedNodes": [
 	  147
     ],
-	"Other": "Survival Instinct Upgrade:\nDuration +100%"
+	"Other": "Survival Instinct Upgrade:\nDuration +100%\nCooldown +30%"
   },
   {
     "id": 248,
