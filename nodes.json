@@ -2257,7 +2257,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  192,
-	  194
+	  194,
+	  195
     ],
 	"Stun Resistance %": "+2.0"
   },
