@@ -236,7 +236,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  9,
-	  21
+	  21,
+	  22
     ],
 	"Movement Speed": "+10"
   },
@@ -257,6 +258,7 @@ var initialBoard = [
     "y": 849,
     "active": false,
     "connectedNodes": [
+	  20,
 	  21,
 	  23
     ],
