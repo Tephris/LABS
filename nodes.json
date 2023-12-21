@@ -2767,7 +2767,8 @@ var initialBoard = [
     "connectedNodes": [
 	  104
     ],
-	"Other": "Class Special Skill Upgrade:\nDuration +100%\nCooldown +30%"
+	"Other": "Hero's Nature Upgrade:\n• Duration +100%\n• Cooldown +30%",
+	"HP %": "+3"
   },
   {
     "id": 239,
@@ -2868,7 +2869,8 @@ var initialBoard = [
     "connectedNodes": [
 	  147
     ],
-	"Other": "Survival Instinct Upgrade:\nDuration +100%\nCooldown +30%"
+	"Other": "Survival Instinct Upgrade:\n• Duration +100%\n• Cooldown +30%",
+	"Dual Damage": "+10"
   },
   {
     "id": 248,
