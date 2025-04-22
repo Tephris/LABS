@@ -86,7 +86,7 @@ function init() {
 			let node = board[nodeId];
 			drawTextbox(node.x, node.y, stats, ctx);
 		} else if (isHelpText(position.x, position.y)) {
-			drawTextbox(1635, 80, helpText, ctx, 400);
+			drawTextbox(1665, 70, helpText, ctx, 400);
 		} else {
 			drawAll(ctx);
 		}
@@ -102,9 +102,9 @@ function init() {
 
 function drawAll(ctx) {
 	let background = new Image();
-	background.src = "background.png";
+	background.src = "background2.png";
 	background.onload = function() {
-		ctx.drawImage(background, 0, 0);
+		ctx.drawImage(background, 2, 2);
 		renderNodes(board, ctx);
 		
 		let pointsUsed = 0;
@@ -122,14 +122,14 @@ function drawAll(ctx) {
 		
 		ctx.fillStyle = "white";
 		ctx.font = '14px sans-serif';
-		ctx.fillText("Reset", 85, 981);
-		ctx.fillText("Generate", 463, 981);
+		ctx.fillText("Reset", 85, 983);
+		ctx.fillText("Generate", 463, 983);
 		
 		ctx.fillStyle = nodeSelectionEnabled ? "yellow" : "white";
-		ctx.fillText("Select Nodes", 255, 981);
+		ctx.fillText("Select Nodes", 255, 983);
 	
 		ctx.fillStyle = isSubclassModeEnabled ? "yellow" : "white";
-		ctx.fillText("Subclass Mode", 60, 27);
+		ctx.fillText("Subclass Mode", 60, 30);
 	};
 }
 
@@ -148,13 +148,13 @@ function isBelowPermutationLimit() {
 
 function leftClick(nodeId, ctx) {
 	if (nodeId > 1) {
-		if (nodeSelectionEnabled && validateAwakeningSkill(nodeId, true)) {
+		if (nodeSelectionEnabled) {
 			board[nodeId].prioritize = !board[nodeId].prioritize;
 		} else if (!nodeSelectionEnabled) {
 			if (board[nodeId].active) {
 				deactivateAllDependentNodes(board[nodeId]);
 				refreshStatSummary(getStatSummary());
-			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId]) && validateAwakeningSkill(nodeId, false)) {	
+			} else if (!board[nodeId].active && hasActiveConnectedNode(board[nodeId])) {	
 				board[nodeId].active = true;
 				refreshStatSummary(getStatSummary());
 			}
@@ -165,7 +165,7 @@ function leftClick(nodeId, ctx) {
 }
 
 function middleClick(nodeId, ctx) {
-	if (nodeId > 1 && validateAwakeningSkill(nodeId, true)) {
+	if (nodeId > 1) {
 		board[nodeId].prioritize = !board[nodeId].prioritize;
 		drawAll(ctx);
 	}
@@ -177,20 +177,6 @@ function rightClick(nodeId, ctx) {
 		refreshStatSummary(getStatSummary());
 		drawAll(ctx);
 	}
-}
-
-function validateAwakeningSkill(nodeId, isPrioritization) {
-	const leftTopSkillId = "205";
-	const leftBottomSkillId = "206";
-	const rightTopSkillId = "281";
-	const rightBottomSkillId = "282";
-	
-	let property = isPrioritization ? "prioritize" : "active";
-	
-	return !((nodeId == leftTopSkillId && board[leftBottomSkillId][property])
-		|| (nodeId == leftBottomSkillId && board[leftTopSkillId][property])
-		|| (nodeId == rightTopSkillId && board[rightBottomSkillId][property])
-		|| (nodeId == rightBottomSkillId && board[rightTopSkillId][property]));
 }
 
 function isResetButton(x, y) {
@@ -331,9 +317,7 @@ function activateShortestPath(currentNode) {
 	
 	let path = getPath(currentBest.steps, currentBest.stopNode);
 	for (const nodeId of path) {
-		if (validateAwakeningSkill(nodeId, false)) {
-			board[nodeId].active = true;
-		}
+		board[nodeId].active = true;
 	}
 }
 

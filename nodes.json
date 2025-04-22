@@ -208,8 +208,8 @@ var initialBoard = [
   },
   {
     "id": 18,
-    "x": 143,
-    "y": 839,
+    "x": 162,
+    "y": 880,
     "active": false,
     "connectedNodes": [
 	  17,
@@ -219,12 +219,11 @@ var initialBoard = [
   },
   {
     "id": 19,
-    "x": 85,
-    "y": 839,
+    "x": 138,
+    "y": 922,
     "active": false,
     "connectedNodes": [
 	  18,
-	  205,
 	  206
     ],
 	"Other": "Class Specific Skill Bonus\n(Lower Left)"
@@ -387,7 +386,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  32,
-	  213
+	  213,
+	  228
     ],
 	"Dual Minimum Damage": "+12"
   },
@@ -860,7 +860,8 @@ var initialBoard = [
     "y": 328,
     "active": false,
     "connectedNodes": [
-	  72
+	  72,
+	  98
     ],
 	"Other": "Awakening Stone Slot\n(Upper Left)"
   },
@@ -1154,7 +1155,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  97,
-	  99
+	  99,
+	  73
     ],
 	"Normal Added Damage %": "+1"
   },
@@ -1224,7 +1226,8 @@ var initialBoard = [
     "connectedNodes": [
 	  100,
 	  105,
-	  238
+	  238,
+	  126
     ],
 	"Strength / Magic": "+500"
   },
@@ -1477,7 +1480,9 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  125,
-	  240
+	  240,
+	  104,
+	  147
     ],
 	"Strength / Magic": "+500"
   },
@@ -1685,7 +1690,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  143,
-	  145
+	  145,
+	  183
     ],
 	"Boss Added Damage %": "+1"
   },
@@ -1721,7 +1727,8 @@ var initialBoard = [
     "connectedNodes": [
 	  146,
 	  148,
-	  247
+	  247,
+	  126
     ],
 	"Strength / Magic": "+500"
   },
@@ -2143,7 +2150,8 @@ var initialBoard = [
     "y": 327,
     "active": false,
     "connectedNodes": [
-	  182
+	  182,
+	  144
     ],
 	"Other": "Awakening Stone Slot\n(Upper Right)"
   },
@@ -2382,24 +2390,14 @@ var initialBoard = [
 	"Stamina": "+500"
   },
   {
-    "id": 205,
-    "x": 42,
-    "y": 771,
-    "active": false,
-    "connectedNodes": [
-	  19
-    ],
-	"Other": "Awakened Skill\n(Lower Left - Top)"
-  },
-  {
     "id": 206,
-    "x": 42,
-    "y": 909,
+    "x": 89,
+    "y": 836,
     "active": false,
     "connectedNodes": [
 	  19
     ],
-	"Other": "Awakened Skill\n(Lower Left - Bottom)"
+	"Other": "Awakened Skill (Bottom Left)"
   },
   {
     "id": 207,
@@ -2647,11 +2645,12 @@ var initialBoard = [
   },
   {
     "id": 228,
-    "x": 116,
-    "y": 383,
+    "x": 100,
+    "y": 393,
     "active": false,
     "connectedNodes": [
-	  56
+	  56,
+	  33
     ],
 	"All Skills (Excluding Summons)\nTarget": "+1"
   },
@@ -2913,7 +2912,8 @@ var initialBoard = [
     "active": false,
     "connectedNodes": [
 	  250,
-	  271
+	  271,
+	  263
     ],
 	"Dual Maximum Damage": "+12"
   },
@@ -2930,8 +2930,8 @@ var initialBoard = [
   },
   {
     "id": 253,
-    "x": 1672,
-    "y": 839,
+    "x": 1646,
+    "y": 879,
     "active": false,
     "connectedNodes": [
 	  244,
@@ -2942,8 +2942,8 @@ var initialBoard = [
   },
   {
     "id": 254,
-    "x": 1705,
-    "y": 806,
+    "x": 1679,
+    "y": 846,
     "active": false,
     "connectedNodes": [
 	  253,
@@ -2953,8 +2953,8 @@ var initialBoard = [
   },
   {
     "id": 255,
-    "x": 1705,
-    "y": 872,
+    "x": 1679,
+    "y": 913,
     "active": false,
     "connectedNodes": [
 	  253,
@@ -2964,13 +2964,12 @@ var initialBoard = [
   },
   {
     "id": 256,
-    "x": 1738,
-    "y": 839,
+    "x": 1712,
+    "y": 880,
     "active": false,
     "connectedNodes": [
 	  254,
 	  255,
-	  281,
 	  282
     ],
 	"Other": "Class Specific Skill Bonus\n(Lower Right - Middle)"
@@ -2988,11 +2987,12 @@ var initialBoard = [
   },
   {
     "id": 263,
-    "x": 1641,
-    "y": 416,
+    "x": 1660,
+    "y": 449,
     "active": false,
     "connectedNodes": [
-	  192
+	  192,
+	  251
     ],
 	"Other": "Special Point Recovery +250\nat 1% chance"
   },
@@ -3019,23 +3019,13 @@ var initialBoard = [
 	"Other": "When damage was given while\nyour HP is 90% or higher:\nDual Minimum Damage +1%\nDual Maximum Damage +1%\nDual Critical Damage +1%\n10s Duration"
   },
   {
-    "id": 281,
-    "x": 1783,
-    "y": 767,
-    "active": false,
-    "connectedNodes": [
-	  256
-    ],
-	"Other": "Awakened Skill\n(Lower Right - Top)"
-  },
-  {
     "id": 282,
-    "x": 1783,
-    "y": 910,
+    "x": 1775,
+    "y": 880,
     "active": false,
     "connectedNodes": [
 	  256
     ],
-	"Other": "Awakened Skill\n(Lower Right - Bottom)"
+	"Other": "Awakened Skill (Bottom Right)"
   }
 ];
